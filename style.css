@@ -314,9 +314,42 @@ body {
 .cd-spine { width: 10px; background: rgba(255,255,255,0.18); border-right: 1px solid rgba(255,255,255,0.3); flex-shrink:0; }
 .cd-cover {
   flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;
-  padding: 12px 8px; text-align: center; gap: 4px;
+  padding: 12px 8px; text-align: center; gap: 6px;
 }
-.cd-emoji { font-size: 1.8rem; }
+/* ---------- Micro-miniatura de CD: caixinha acrílica skeuomórfica (24x24) ---------- */
+.cd-mini-case {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.08);
+  background-size: cover;
+  background-position: center;
+  box-shadow:
+    1px 2px 3px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+/* lombada/borda fosca plástica, lateral esquerda */
+.cd-mini-case::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 3px;
+  background: rgba(255, 255, 255, 0.45);
+  filter: blur(0.5px);
+  box-shadow: 1px 0 1px rgba(0, 0, 0, 0.25);
+}
+/* reflexo glossy diagonal */
+.cd-mini-case::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 60%);
+  pointer-events: none;
+}
 .cd-cover h3 { margin: 0; font-size: 0.82rem; font-weight: 700; line-height: 1.25; word-break: break-word; }
 .cd-group-badge {
   font-size: 0.6rem; font-weight: 700; letter-spacing: 0.04em;
@@ -327,6 +360,7 @@ body {
 .cd-group-badge.C { background: rgba(255,193,7,0.22); color: #ffd54f; }
 .cd-group-badge.MAG { background: rgba(255,59,59,0.22); color: var(--neon-red); }
 .cd-track-count { font-size: 0.65rem; color: var(--text-dim); font-family: var(--font-mono); }
+.cd-aka { font-size: 0.62rem; color: var(--text-dim); font-style: italic; opacity: 0.85; line-height: 1.2; }
 .catalog-empty { text-align:center; padding: 30px; color: var(--text-dim); font-size: 0.9rem; }
 
 /* ============================== TELEMETRIA ============================== */
@@ -393,6 +427,25 @@ body {
 }
 .nero-fill.done { background: repeating-linear-gradient(45deg, #1a6e3c 0 8px, var(--neon-green) 8px 16px); }
 .nero-label { display:block; margin-top: 4px; font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim); }
+
+.cd-desc-panel {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+.cd-desc-cover {
+  width: 56px; height: 56px; border-radius: 6px; flex-shrink: 0;
+  background-size: cover; background-position: center;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 2px 3px 8px rgba(0,0,0,0.5);
+}
+.cd-desc-text { font-size: 0.8rem; color: var(--text-dim); line-height: 1.45; }
+.cd-desc-text strong { color: var(--text-ink); }
 
 #search-track {
   width: 100%; margin-bottom: 10px;

@@ -6,7 +6,9 @@
     "declared": 5,
     "actual": 5,
     "grupo": "A",
-    "icon": "💿"
+    "icon": "💿",
+    "descricao": "Para os entusiastas de Cross Racing Championship 2005 é um videogame de corrida desenvolvido pela Invictus Games e lançado em 4 de outubro de 2005 para Microsoft Windows.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 2,
@@ -15,7 +17,9 @@
     "declared": 91,
     "actual": 91,
     "grupo": "A",
-    "icon": "🖤"
+    "icon": "🖤",
+    "descricao": "Uma imersão sonora profunda na trilha sonora da serie",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 3,
@@ -24,7 +28,9 @@
     "declared": 94,
     "actual": 94,
     "grupo": "A",
-    "icon": "🏎️"
+    "icon": "🏎️",
+    "descricao": "Trilha sonora inspirada na clássica franquia cheia de groove e linhas de baixo marcantes.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 4,
@@ -33,7 +39,9 @@
     "declared": 340,
     "actual": 340,
     "grupo": "A",
-    "icon": "🎛️"
+    "icon": "🎛️",
+    "descricao": "O auge do Big Room e do Electro House comercial que dominou os maiores festivais do planeta em 2013.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 5,
@@ -42,7 +50,9 @@
     "declared": 884,
     "actual": 884,
     "grupo": "A",
-    "icon": "🎛️"
+    "icon": "🎛️",
+    "descricao": "A evolução da música eletrônica com a explosão do Future Bass, Brazilian Bass e vertentes melódicas de alta octanagem.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 6,
@@ -51,7 +61,9 @@
     "declared": 52,
     "actual": 52,
     "grupo": "A",
-    "icon": "⚽"
+    "icon": "⚽",
+    "descricao": "Trilha sonora do game",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 7,
@@ -60,7 +72,9 @@
     "declared": 74,
     "actual": 74,
     "grupo": "A",
-    "icon": "🌴"
+    "icon": "🌴",
+    "descricao": "A rádio definitiva da Costa Oeste dos anos 90, passeando pelo Gangsta Rap clássico, Grunge, Rock Alternativo e Funk clássico.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 8,
@@ -69,7 +83,9 @@
     "declared": 187,
     "actual": 187,
     "grupo": "A",
-    "icon": "🌴"
+    "icon": "🌴",
+    "descricao": "A personificação dos anos 80: Synthpop brilhante, New Wave, Glam Metal e hinos neon que embalam as ruas tropicais de Miami.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 9,
@@ -78,7 +94,9 @@
     "declared": 190,
     "actual": 190,
     "grupo": "A",
-    "icon": "🌴"
+    "icon": "🌴",
+    "descricao": "Mais uma viagem profunda aos anos 80, trazendo raridades e joias escondidas do Pop clássico, Rock e Soul de Miami.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 10,
@@ -87,7 +105,9 @@
     "declared": 859,
     "actual": 859,
     "grupo": "A",
-    "icon": "📻"
+    "icon": "📻",
+    "descricao": "Megamix nostálgico das faixas que dominavam as paradas da MTV Brasil e a programação jovem da Jovem Pan FM.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 11,
@@ -96,7 +116,9 @@
     "declared": 519,
     "actual": 519,
     "grupo": "A",
-    "icon": "📻"
+    "icon": "📻",
+    "descricao": "Inspirado nos icônicos programas de rádio de dance music que ditavam o ritmo das pistas brasileiras nas noites de sábado.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 12,
@@ -105,7 +127,9 @@
     "declared": 122,
     "actual": 122,
     "grupo": "A",
-    "icon": "📺"
+    "icon": "📺",
+    "descricao": "Túnel do tempo infanto-juvenil com as aberturas icônicas de séries e desenhos que marcaram os anos 2000.",
+    "capa_ext_hint": "jpg"
   },
   {
     "idx": 13,
@@ -114,7 +138,9 @@
     "declared": 1615,
     "actual": 1615,
     "grupo": "A",
-    "icon": "🎮"
+    "icon": "🎮",
+    "descricao": "Trilhas sonoras de jogos de esporte marcantes dos anos 2000 (playstation e xbox).",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 14,
@@ -123,7 +149,9 @@
     "declared": 180,
     "actual": 180,
     "grupo": "A",
-    "icon": "🏃"
+    "icon": "🏃",
+    "descricao": "Essência da cultura tuning dos anos 2000, combinando trilhas sonoras icônicas da franquia Velozes e Furiosos com os clássicos das corridas de rua para videogames, incluindo NFSU 1 e 2, MW e L.A RUSH.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 15,
@@ -132,7 +160,9 @@
     "declared": 531,
     "actual": 531,
     "grupo": "A",
-    "icon": "🤠"
+    "icon": "🤠",
+    "descricao": "A febre do sertanejo universitário a partir de meados dos anos 2007 e 2012.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 16,
@@ -141,7 +171,9 @@
     "declared": 435,
     "actual": 435,
     "grupo": "A",
-    "icon": "🎤"
+    "icon": "🎤",
+    "descricao": "Foco total nas frequências baixas, subwoofers no talo e o melhor do Hip Hop americano feito para tremer a lataria do carro estilo Steve Meade Designs.",
+    "capa_ext_hint": "jpg"
   },
   {
     "idx": 17,
@@ -150,7 +182,9 @@
     "declared": 348,
     "actual": 348,
     "grupo": "A",
-    "icon": "💪"
+    "icon": "💪",
+    "descricao": "A trilha sonora lendária da era de ouro: Hardstyle puríssimo, Trance edificante e hinos que marcaram a era da estética.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 18,
@@ -159,7 +193,9 @@
     "declared": 8,
     "actual": 8,
     "grupo": "A",
-    "icon": "🏎️"
+    "icon": "🏎️",
+    "descricao": "Trilha sonora do game",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 19,
@@ -168,7 +204,9 @@
     "declared": 2768,
     "actual": 2768,
     "grupo": "A",
-    "icon": "📼"
+    "icon": "📼",
+    "descricao": "Uma das maiores e mais completas coleções de Synthpop, New Romantic, Post-Punk e hinos das pistas de dança da década de 80.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 20,
@@ -177,7 +215,9 @@
     "declared": 841,
     "actual": 841,
     "grupo": "A",
-    "icon": "🪗"
+    "icon": "🪗",
+    "descricao": "O Prime do forro eletrônico/estilizado/piseiro da nova geração",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 21,
@@ -186,7 +226,9 @@
     "declared": 3869,
     "actual": 3869,
     "grupo": "A",
-    "icon": "🤘"
+    "icon": "🤘",
+    "descricao": "O compilado definitivo da nata desse gênero que surgiu no anos 2000 e muita velocidade.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 22,
@@ -195,7 +237,9 @@
     "declared": 597,
     "actual": 597,
     "grupo": "B",
-    "icon": "💋"
+    "icon": "💋",
+    "descricao": "Graves suaves e profundos, vocais polifônicos e as baladas americanas mais marcantes que dominavam os mini systems e rádios nos anos 2000 – 2010 - 2012.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 23,
@@ -204,7 +248,9 @@
     "declared": 29,
     "actual": 29,
     "grupo": "C",
-    "icon": "🎵"
+    "icon": "🎵",
+    "descricao": "Meu primeiro arcevo de musicas que montei quando morava no conjunto praia do janga no o bloco A6, com Nero Burning ROM, Windows Media Player, gravações da radio e ripagem de CDS piratas.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 24,
@@ -213,7 +259,9 @@
     "declared": 12,
     "actual": 12,
     "grupo": "C",
-    "icon": "🎸"
+    "icon": "🎸",
+    "descricao": "Uma das soundtracks melhores de Pernambuco",
+    "capa_ext_hint": "jpg"
   },
   {
     "idx": 25,
@@ -222,7 +270,9 @@
     "declared": 3,
     "actual": 3,
     "grupo": "C",
-    "icon": "🎸"
+    "icon": "🎸",
+    "descricao": "Seleção de DVD´s da banda inglesa em qualidade FLAC.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 26,
@@ -231,7 +281,9 @@
     "declared": 819,
     "actual": 819,
     "grupo": "C",
-    "icon": "🎛️"
+    "icon": "🎛️",
+    "descricao": "A energia crua de 2013 misturada com estéticas visuais e texturas sonoras nostálgicas da internet.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 27,
@@ -240,7 +292,9 @@
     "declared": 132,
     "actual": 132,
     "grupo": "B",
-    "icon": "🕺"
+    "icon": "🕺",
+    "descricao": "Trilhas imortais das pistas de dança dos anos 90 que marcaram o mundo.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 28,
@@ -249,7 +303,9 @@
     "declared": 107,
     "actual": 107,
     "grupo": "C",
-    "icon": "🎵"
+    "icon": "🎵",
+    "descricao": "Trilha sonora inspirada na cultura automobilística de Velozes e Furiosos: Reggaeton, Hip Hop de Miami e Eletrônica de racha.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 29,
@@ -258,7 +314,9 @@
     "declared": 305,
     "actual": 305,
     "grupo": "B",
-    "icon": "⚽"
+    "icon": "⚽",
+    "descricao": "Pra jogar um FIFA.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 30,
@@ -267,7 +325,9 @@
     "declared": 711,
     "actual": 711,
     "grupo": "B",
-    "icon": "🪗"
+    "icon": "🪗",
+    "descricao": "chama na cachanga.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 31,
@@ -276,7 +336,9 @@
     "declared": 90,
     "actual": 90,
     "grupo": "B",
-    "icon": "🌴"
+    "icon": "🌴",
+    "descricao": "Trilha sonora dos gtas modificados de de ps2",
+    "capa_ext_hint": "jpg"
   },
   {
     "idx": 32,
@@ -285,7 +347,9 @@
     "declared": 16,
     "actual": 16,
     "grupo": "C",
-    "icon": "🎵"
+    "icon": "🎵",
+    "descricao": "Seleção focada nas produções eletrônicas e remixes para testar a ultima safra de mini systems que eram vendidos nas lojas de varejo como Carrefour/ Casas Bahia da vida...",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 33,
@@ -294,7 +358,9 @@
     "declared": 13,
     "actual": 13,
     "grupo": "MAG",
-    "icon": "🕺"
+    "icon": "🕺",
+    "descricao": "O Rap automotivo de Brasília que virou trilha do tuning, carros rebaixados, som no talo e crônicas da vida urbana nas pistas.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 34,
@@ -303,7 +369,9 @@
     "declared": 33,
     "actual": 33,
     "grupo": "MAG",
-    "icon": "🦸"
+    "icon": "🦸",
+    "descricao": "Crônicas rimadas com graves marcantes sobre lendas do asfalto, o submundo do automobilismo urbano e os heróis da noite.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 35,
@@ -312,7 +380,9 @@
     "declared": 140,
     "actual": 140,
     "grupo": "B",
-    "icon": "🌴"
+    "icon": "🌴",
+    "descricao": "A base rítmica de onde nasceu o funk brasileiro: batidas aceleradas de Roland TR-808, sintetizadores e vocais melódicos dos anos 80/90.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 36,
@@ -321,7 +391,9 @@
     "declared": 78,
     "actual": 78,
     "grupo": "C",
-    "icon": "🏁"
+    "icon": "🏁",
+    "descricao": "Inspirado nas madrugadas de Need for Speed Underground e Most Wanted: Rock industrial, Hip Hop pesado e Nu Metal de garagem.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 37,
@@ -330,7 +402,10 @@
     "declared": 2054,
     "actual": 2054,
     "grupo": "B",
-    "icon": "💿"
+    "icon": "💿",
+    "aka": "O Mundo Se Acabou em 2012 (Spotify/Deezer)",
+    "descricao": "Uma jornada musical massiva compilando as maiores influências de uma vida inteira de colecionismo de mídias e mp3.",
+    "capa_ext_hint": "jpg"
   },
   {
     "idx": 38,
@@ -339,7 +414,10 @@
     "declared": 2047,
     "actual": 2047,
     "grupo": "B",
-    "icon": "💿"
+    "icon": "💿",
+    "aka": "O Mundo Se Acabou em 2012 (Spotify/Deezer)",
+    "descricao": "A evolução da seleção original: faixas updated e reestruturadas para manter a vanguarda e o fluxo de energia perfeitos.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 39,
@@ -348,7 +426,9 @@
     "declared": 167,
     "actual": 167,
     "grupo": "B",
-    "icon": "📻"
+    "icon": "📻",
+    "descricao": "O melhor do Pop, Rock e Reggae nacional que tocava sem parar nas maiores rádios brasileiras no início dos anos 2000.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 40,
@@ -357,7 +437,9 @@
     "declared": 622,
     "actual": 622,
     "grupo": "B",
-    "icon": "📻"
+    "icon": "📻",
+    "descricao": "Compilado abrangente unindo os comerciais icônicos, falas de DJs e as músicas mais marcantes de todo o universo da Rockstar Games.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 41,
@@ -366,7 +448,9 @@
     "declared": 150,
     "actual": 150,
     "grupo": "B",
-    "icon": "🔥"
+    "icon": "🔥",
+    "descricao": "Batidas pesadas de Dembow porto-riquenho clássico e moderno, perfeitas para derreter os alto falantes do seu Sony Genezi zux999.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 42,
@@ -375,7 +459,9 @@
     "declared": 888,
     "actual": 888,
     "grupo": "C",
-    "icon": "🪗"
+    "icon": "🪗",
+    "descricao": "Seleção gigante feita para tocar nos paredões de som, O início do forró eletrônico/estilizado da era dos sons de paredão e farra nos postos de gasolina. Maior formador de playboy dos meados dos anos 2009",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 43,
@@ -384,7 +470,9 @@
     "declared": 392,
     "actual": 392,
     "grupo": "B",
-    "icon": "☀️"
+    "icon": "☀️",
+    "descricao": "As coletâneas que mudaram a história da Dance Music. Puro suco dos anos 2000 – 2010 e da cultura pop raiz.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 44,
@@ -393,7 +481,9 @@
     "declared": 158,
     "actual": 158,
     "grupo": "B",
-    "icon": "🌧️"
+    "icon": "🌧️",
+    "descricao": "A vibe eletrônica underground e clubber, focada em linhas de baixo envolventes, grooves e progressões hipnóticas de sintetizador.",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 45,
@@ -402,7 +492,9 @@
     "declared": 441,
     "actual": 441,
     "grupo": "A",
-    "icon": "💃"
+    "icon": "💃",
+    "descricao": "Brega marcante e Tecnobrega que fizeram tremer os salões e as radiolas do Nordeste",
+    "capa_ext_hint": "png"
   },
   {
     "idx": 46,
@@ -411,6 +503,8 @@
     "declared": 5187,
     "actual": 5187,
     "grupo": "A",
-    "icon": "🎡"
+    "icon": "🎡",
+    "descricao": "O maior acervo do catálogo: as lendárias músicas que tocavam nos alto-falantes do parque de diversões de PE.",
+    "capa_ext_hint": "png"
   }
 ]

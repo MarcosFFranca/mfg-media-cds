@@ -32,7 +32,7 @@ NODE | lastfm | BLOCO4 | Last.fm | Camada de Rastreamento & Analytics | icon:�
 EDGE_LABEL | player_pc | lastfm | Scrobble Spotify: OK / Deezer (Web Desktop): SEM scrobble
 EDGE_LABEL | player_mibox | lastfm | Freezer + Kodi + Foobar2000: Scrobble OK
 EDGE_LABEL | player_tvbox | lastfm | Freezer + Kodi: Scrobble OK
-EDGE_LABEL | player_celular | lastfm | Spotify + Deezer (sem scrobble) + Apps oficiais: Scrobble OK
+EDGE_LABEL | player_celular | lastfm | USB Audio Player Pro: Scrobble OK · Spotify: Scrobble OK · Deezer: SEM scrobble
 
 # --- METADADOS GERAIS ---
 META | total_cds | 46

@@ -64,7 +64,8 @@
         <div class="window-body">
           <ul class="status-list">
             <li><span class="led green"></span> Spotify (Cell/PC) — Scrobble OK</li>
-            <li><span class="led red"></span> Deezer Desktop (PC) — SEM scrobble</li>
+            <li><span class="led red"></span> Deezer (PC Desktop e Cell) — SEM scrobble</li>
+            <li><span class="led green"></span> USB Audio Player Pro (Cell) — Scrobble OK</li>
             <li><span class="led green"></span> Freezer (TV Box / Mi Box) — Scrobble OK</li>
             <li><span class="led green"></span> Kodi (TV Box / Mi Box) — Scrobble OK</li>
             <li><span class="led green"></span> Foobar2000 (Mi Box) — Scrobble OK</li>
@@ -134,6 +135,7 @@
       <button class="close-btn" onclick="fecharModal()" aria-label="Fechar">✕</button>
     </div>
     <div class="window-body">
+      <div id="cd-desc-panel" class="cd-desc-panel" style="display:none;"></div>
       <div class="nero-progress-wrap">
         <div class="nero-progress-bar"><div class="nero-fill" id="nero-fill"></div></div>
         <span class="nero-label" id="nero-label">A gravar pista de dados...</span>

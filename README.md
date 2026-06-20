@@ -20,15 +20,6 @@ mfg-media-cds/
         └── ... (46 arquivos, um por CD)
 ```
 
-## Como hospedar no GitHub Pages
-
-1. Crie um repositório (ex: `mfg-media-cds`).
-2. Faça upload de todo o conteúdo desta pasta para a raiz do repositório.
-3. Em **Settings → Pages**, selecione a branch `main` e a pasta `/ (root)`.
-4. O site ficará em `https://<seu-usuario>.github.io/mfg-media-cds/`.
-
-Como é 100% estático (sem build, sem backend), não há mais nenhum passo.
-
 ## Como atualizar o mapa/diagrama
 
 Edite `dados/diagrama.txt` — **não precisa tocar em nenhum código**. A sintaxe:

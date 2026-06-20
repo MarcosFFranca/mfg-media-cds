@@ -101,8 +101,9 @@ function renderCatalog() {
       <div class="cd-case">
         <div class="cd-spine"></div>
         <div class="cd-cover">
-          <span class="cd-emoji">${cd.icon}</span>
+          <div class="cd-mini-case" data-slug="${cd.slug}" aria-hidden="true"></div>
           <h3>${escapeHTML(cd.name)}</h3>
+          ${cd.aka ? `<span class="cd-aka">tb conhecido como "${escapeHTML(cd.aka)}"</span>` : ''}
           <span class="cd-group-badge ${cd.grupo}">${cd.grupo === 'MAG' ? 'MAG' : 'Grupo ' + cd.grupo}</span>
           <span class="cd-track-count">${fmtNum(cd.actual)} faixas</span>
         </div>
@@ -116,6 +117,24 @@ function renderCatalog() {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); carregarMusicas(card.dataset.slug); }
     });
   });
+
+  grid.querySelectorAll('.cd-mini-case').forEach(el => carregarCapaComFallback(el, el.dataset.slug));
+}
+
+// --------------------------------------------------------------------------
+// Carrega a capa de um CD testando .jpg primeiro, com fallback para .png
+// --------------------------------------------------------------------------
+function carregarCapaComFallback(el, slug) {
+  const base = `assets/capas_thumb/${slug}/capa`;
+  const jpgImg = new Image();
+  jpgImg.onload = () => { el.style.backgroundImage = `url('${base}.jpg')`; };
+  jpgImg.onerror = () => {
+    const pngImg = new Image();
+    pngImg.onload = () => { el.style.backgroundImage = `url('${base}.png')`; };
+    pngImg.onerror = () => { /* sem capa disponível: mantém o fundo translúcido padrão */ };
+    pngImg.src = `${base}.png`;
+  };
+  jpgImg.src = `${base}.jpg`;
 }
 
 document.getElementById('search-cd').addEventListener('input', renderCatalog);
@@ -140,6 +159,7 @@ function carregarMusicas(slug) {
   const fill = document.getElementById('nero-fill');
   const label = document.getElementById('nero-label');
   const searchTrack = document.getElementById('search-track');
+  const descPanel = document.getElementById('cd-desc-panel');
 
   searchTrack.value = '';
   currentTracks = [];
@@ -149,6 +169,17 @@ function carregarMusicas(slug) {
   fill.classList.remove('done');
   label.textContent = 'A posicionar cabeça de leitura...';
   modal.classList.add('open');
+
+  if (cd && cd.descricao) {
+    descPanel.style.display = 'flex';
+    descPanel.innerHTML = `
+      <div class="cd-desc-cover" id="cd-desc-cover"></div>
+      <p class="cd-desc-text"><strong>${escapeHTML(cd.name)}</strong><br>${escapeHTML(cd.descricao)}</p>`;
+    carregarCapaComFallback(document.getElementById('cd-desc-cover'), slug);
+  } else {
+    descPanel.style.display = 'none';
+    descPanel.innerHTML = '';
+  }
 
   fetch(`dados/cds/${slug}.json`)
     .then(r => {
@@ -162,7 +193,7 @@ function carregarMusicas(slug) {
       fill.style.width = '100%';
       fill.classList.add('done');
       label.textContent = `Gravação concluída — ${fmtNum(tracks.length)} faixas.`;
-      titulo.textContent = `${cd ? cd.name : slug} — ${fmtNum(tracks.length)} faixas`;
+      titulo.textContent = `${cd ? cd.name : slug}${cd && cd.aka ? ' ("' + cd.aka + '")' : ''} — ${fmtNum(tracks.length)} faixas`;
       renderTracklist(tracks);
     })
     .catch(err => {
