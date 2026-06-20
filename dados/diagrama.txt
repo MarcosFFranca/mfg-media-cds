@@ -36,5 +36,5 @@ EDGE_LABEL | player_celular | lastfm | USB Audio Player Pro: Scrobble OK · Spot
 
 # --- METADADOS GERAIS ---
 META | total_cds | 46
-META | total_faixas | 29203
+META | total_faixas | 29403
 META | atualizado_em | 19/06/2026
