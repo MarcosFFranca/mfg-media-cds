@@ -1,0 +1,67 @@
+# MFG Media CDs
+
+Hub pessoal de gerenciamento de músicas e telemetria. Site estático, sem frameworks — HTML5 + CSS3 + JavaScript puro. Pronto para GitHub Pages.
+
+## Estrutura
+
+```
+mfg-media-cds/
+├── index.html
+├── style.css
+├── app.js
+├── assets/
+│   └── mfg_media_cds_logo.png
+└── dados/
+    ├── manifest.json        # lista dos 46 CDs (nome, grupo, ícone, contagem)
+    ├── diagrama.txt         # dados do mapa interativo (editável manualmente)
+    └── cds/
+        ├── crc_2005.json
+        ├── d_a_r_k.json
+        └── ... (46 arquivos, um por CD)
+```
+
+## Como hospedar no GitHub Pages
+
+1. Crie um repositório (ex: `mfg-media-cds`).
+2. Faça upload de todo o conteúdo desta pasta para a raiz do repositório.
+3. Em **Settings → Pages**, selecione a branch `main` e a pasta `/ (root)`.
+4. O site ficará em `https://<seu-usuario>.github.io/mfg-media-cds/`.
+
+Como é 100% estático (sem build, sem backend), não há mais nenhum passo.
+
+## Como atualizar o mapa/diagrama
+
+Edite `dados/diagrama.txt` — **não precisa tocar em nenhum código**. A sintaxe:
+
+```
+NODE | id_unico | BLOCO | Título | Subtítulo | icon:🎵 | from:id_de_origem1,id_de_origem2
+```
+
+- `BLOCO` pode ser `BLOCO1`, `BLOCO2`, `BLOCO3` ou `BLOCO4`.
+- `from:` define de quais nós a seta "vem" — isso alimenta o destaque ao passar o mouse.
+- Linhas com `EDGE_LABEL | origem | destino | descrição` aparecem como legendas de status (scrobble) abaixo do diagrama.
+- Linhas começando com `#` são ignoradas (comentários).
+
+Depois de editar, é só recarregar a página — o `app.js` lê o `.txt` via `fetch` a cada carregamento.
+
+## Como adicionar ou atualizar um CD
+
+1. Adicione/edite a entrada correspondente em `dados/manifest.json`:
+   ```json
+   { "idx": 47, "name": "Nome do CD", "slug": "nome_do_cd", "declared": 10, "actual": 10, "grupo": "B", "icon": "🎵" }
+   ```
+2. Crie `dados/cds/nome_do_cd.json` com a lista de faixas:
+   ```json
+   [{"t": "Artista - Faixa"}, {"t": "Outro Artista - Outra Faixa", "ext": "flac"}]
+   ```
+   O campo `ext` é opcional — quando presente, aparece como uma etiqueta (badge) ao lado da faixa.
+
+O carregamento é sempre assíncrono e por CD: o navegador nunca baixa as +29 mil faixas de uma vez, apenas o arquivo do CD clicado.
+
+## Telemetria Last.fm
+
+O `app.js` usa a API pública do Last.fm (`user.getrecenttracks`) para mostrar a faixa atual do perfil `MarcosMFFGG26`, atualizando a cada 30 segundos. Se quiser usar sua própria chave de API (recomendado para uso contínuo e maior limite de requisições), gere uma gratuitamente em https://www.last.fm/api/account/create e substitua o valor de `LASTFM_API_KEY` no topo de `app.js`.
+
+## Dados de origem
+
+Os 46 CDs e a contagem de 29.203 faixas foram extraídos e validados a partir de `CONTAGEM_MUSICAS_CDS_COMPLETO.txt` (verificação de integridade: soma das contagens declaradas por CD = total geral, sem nenhuma divergência). Os CDs #22 a #44 (Grupo B e C, fonte local/nuvem) tinham nomes de arquivo brutos (`01. Artista - Faixa.mp3`); foram normalizados para `Artista - Faixa` com a extensão preservada como badge visual.

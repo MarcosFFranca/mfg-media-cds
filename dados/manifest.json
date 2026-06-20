@@ -1,0 +1,416 @@
+[
+  {
+    "idx": 1,
+    "name": "CRC 2005",
+    "slug": "crc_2005",
+    "declared": 5,
+    "actual": 5,
+    "grupo": "A",
+    "icon": "💿"
+  },
+  {
+    "idx": 2,
+    "name": "D A R K",
+    "slug": "d_a_r_k",
+    "declared": 91,
+    "actual": 91,
+    "grupo": "A",
+    "icon": "🖤"
+  },
+  {
+    "idx": 3,
+    "name": "DrivER",
+    "slug": "driver",
+    "declared": 94,
+    "actual": 94,
+    "grupo": "A",
+    "icon": "🏎️"
+  },
+  {
+    "idx": 4,
+    "name": "EDM 2013",
+    "slug": "edm_2013",
+    "declared": 340,
+    "actual": 340,
+    "grupo": "A",
+    "icon": "🎛️"
+  },
+  {
+    "idx": 5,
+    "name": "EDM 2017",
+    "slug": "edm_2017",
+    "declared": 884,
+    "actual": 884,
+    "grupo": "A",
+    "icon": "🎛️"
+  },
+  {
+    "idx": 6,
+    "name": "FIFA Street 2 Soundtrack",
+    "slug": "fifa_street_2_soundtrack",
+    "declared": 52,
+    "actual": 52,
+    "grupo": "A",
+    "icon": "⚽"
+  },
+  {
+    "idx": 7,
+    "name": "GTA San Andreas (Trilha Sonora)",
+    "slug": "gta_san_andreas_trilha_sonora",
+    "declared": 74,
+    "actual": 74,
+    "grupo": "A",
+    "icon": "🌴"
+  },
+  {
+    "idx": 8,
+    "name": "GTA Vice City (Trilha Sonora)",
+    "slug": "gta_vice_city_trilha_sonora",
+    "declared": 187,
+    "actual": 187,
+    "grupo": "A",
+    "icon": "🌴"
+  },
+  {
+    "idx": 9,
+    "name": "GTA Vice City Stories (Trilha Sonora)",
+    "slug": "gta_vice_city_stories_trilha_sonora",
+    "declared": 190,
+    "actual": 190,
+    "grupo": "A",
+    "icon": "🌴"
+  },
+  {
+    "idx": 10,
+    "name": "Hits Pop Rock JP_MIX_MTV",
+    "slug": "hits_pop_rock_jp_mix_mtv",
+    "declared": 859,
+    "actual": 859,
+    "grupo": "A",
+    "icon": "📻"
+  },
+  {
+    "idx": 11,
+    "name": "JP Energia Mix Transamérica",
+    "slug": "jp_energia_mix_transamerica",
+    "declared": 519,
+    "actual": 519,
+    "grupo": "A",
+    "icon": "📻"
+  },
+  {
+    "idx": 12,
+    "name": "Nickelodeon & Disney Channel Theme Songs",
+    "slug": "nickelodeon_disney_channel_theme_songs",
+    "declared": 122,
+    "actual": 122,
+    "grupo": "A",
+    "icon": "📺"
+  },
+  {
+    "idx": 13,
+    "name": "Playstation SONS",
+    "slug": "playstation_sons",
+    "declared": 1615,
+    "actual": 1615,
+    "grupo": "A",
+    "icon": "🎮"
+  },
+  {
+    "idx": 14,
+    "name": "RUSH",
+    "slug": "rush",
+    "declared": 180,
+    "actual": 180,
+    "grupo": "A",
+    "icon": "🏃"
+  },
+  {
+    "idx": 15,
+    "name": "Sertanejo Antigo",
+    "slug": "sertanejo_antigo",
+    "declared": 531,
+    "actual": 531,
+    "grupo": "A",
+    "icon": "🤠"
+  },
+  {
+    "idx": 16,
+    "name": "Tremendos Bass Hip Hop",
+    "slug": "tremendos_bass_hip_hop",
+    "declared": 435,
+    "actual": 435,
+    "grupo": "A",
+    "icon": "🎤"
+  },
+  {
+    "idx": 17,
+    "name": "ZYZZ",
+    "slug": "zyzz",
+    "declared": 348,
+    "actual": 348,
+    "grupo": "A",
+    "icon": "💪"
+  },
+  {
+    "idx": 18,
+    "name": "_CarX Drift Racing",
+    "slug": "carx_drift_racing",
+    "declared": 8,
+    "actual": 8,
+    "grupo": "A",
+    "icon": "🏎️"
+  },
+  {
+    "idx": 19,
+    "name": "_De Volta para os Anos 80 📼📼⚡",
+    "slug": "de_volta_para_os_anos_80",
+    "declared": 2768,
+    "actual": 2768,
+    "grupo": "A",
+    "icon": "📼"
+  },
+  {
+    "idx": 20,
+    "name": "_PRIME FORRÓ ESTILIZADO",
+    "slug": "prime_forro_estilizado",
+    "declared": 841,
+    "actual": 841,
+    "grupo": "A",
+    "icon": "🪗"
+  },
+  {
+    "idx": 21,
+    "name": "_ROCK Nu Metal 2000!",
+    "slug": "rock_nu_metal_2000",
+    "declared": 3869,
+    "actual": 3869,
+    "grupo": "A",
+    "icon": "🤘"
+  },
+  {
+    "idx": 22,
+    "name": "2000s R&B",
+    "slug": "2000s_rb",
+    "declared": 597,
+    "actual": 597,
+    "grupo": "B",
+    "icon": "💋"
+  },
+  {
+    "idx": 23,
+    "name": "A6",
+    "slug": "a6",
+    "declared": 29,
+    "actual": 29,
+    "grupo": "C",
+    "icon": "🎵"
+  },
+  {
+    "idx": 24,
+    "name": "Alceu Valena - Amigo da Arte",
+    "slug": "alceu_valena_amigo_da_arte",
+    "declared": 12,
+    "actual": 12,
+    "grupo": "C",
+    "icon": "🎸"
+  },
+  {
+    "idx": 25,
+    "name": "Coldplay",
+    "slug": "coldplay",
+    "declared": 3,
+    "actual": 3,
+    "grupo": "C",
+    "icon": "🎸"
+  },
+  {
+    "idx": 26,
+    "name": "EDM 2013 Aestheticz",
+    "slug": "edm_2013_aestheticz",
+    "declared": 819,
+    "actual": 819,
+    "grupo": "C",
+    "icon": "🎛️"
+  },
+  {
+    "idx": 27,
+    "name": "Euro Dance 90",
+    "slug": "euro_dance_90",
+    "declared": 132,
+    "actual": 132,
+    "grupo": "B",
+    "icon": "🕺"
+  },
+  {
+    "idx": 28,
+    "name": "F&F",
+    "slug": "ff",
+    "declared": 107,
+    "actual": 107,
+    "grupo": "C",
+    "icon": "🎵"
+  },
+  {
+    "idx": 29,
+    "name": "FIFA MODE",
+    "slug": "fifa_mode",
+    "declared": 305,
+    "actual": 305,
+    "grupo": "B",
+    "icon": "⚽"
+  },
+  {
+    "idx": 30,
+    "name": "FORRO ARRETADO CABRA SAFADO",
+    "slug": "forro_arretado_cabra_safado",
+    "declared": 711,
+    "actual": 711,
+    "grupo": "B",
+    "icon": "🪗"
+  },
+  {
+    "idx": 31,
+    "name": "GTA SANDERA",
+    "slug": "gta_sandera",
+    "declared": 90,
+    "actual": 90,
+    "grupo": "B",
+    "icon": "🌴"
+  },
+  {
+    "idx": 32,
+    "name": "Juanmanuelijo",
+    "slug": "juanmanuelijo",
+    "declared": 16,
+    "actual": 16,
+    "grupo": "C",
+    "icon": "🎵"
+  },
+  {
+    "idx": 33,
+    "name": "Mag - Pra Quem T na Pista",
+    "slug": "mag_pra_quem_t_na_pista",
+    "declared": 13,
+    "actual": 13,
+    "grupo": "MAG",
+    "icon": "🕺"
+  },
+  {
+    "idx": 34,
+    "name": "Mag - Super-Heróis Urbanos",
+    "slug": "mag_superheris_urbanos",
+    "declared": 33,
+    "actual": 33,
+    "grupo": "MAG",
+    "icon": "🦸"
+  },
+  {
+    "idx": 35,
+    "name": "Miami Bass Freestyle Oldschool",
+    "slug": "miami_bass_freestyle_oldschool",
+    "declared": 140,
+    "actual": 140,
+    "grupo": "B",
+    "icon": "🌴"
+  },
+  {
+    "idx": 36,
+    "name": "NFS",
+    "slug": "nfs",
+    "declared": 78,
+    "actual": 78,
+    "grupo": "C",
+    "icon": "🏁"
+  },
+  {
+    "idx": 37,
+    "name": "PLAYLIST GENEZI",
+    "slug": "playlist_genezi",
+    "declared": 2054,
+    "actual": 2054,
+    "grupo": "B",
+    "icon": "💿"
+  },
+  {
+    "idx": 38,
+    "name": "PLAYLIST GENEZI NOVA ORDEM",
+    "slug": "playlist_genezi_nova_ordem",
+    "declared": 2047,
+    "actual": 2047,
+    "grupo": "B",
+    "icon": "💿"
+  },
+  {
+    "idx": 39,
+    "name": "Radio MIX Nacional",
+    "slug": "radio_mix_nacional",
+    "declared": 167,
+    "actual": 167,
+    "grupo": "B",
+    "icon": "📻"
+  },
+  {
+    "idx": 40,
+    "name": "RadioS do GTA",
+    "slug": "radios_do_gta",
+    "declared": 622,
+    "actual": 622,
+    "grupo": "B",
+    "icon": "📻"
+  },
+  {
+    "idx": 41,
+    "name": "Reggaeton ZUX999",
+    "slug": "reggaeton_zux999",
+    "declared": 150,
+    "actual": 150,
+    "grupo": "B",
+    "icon": "🔥"
+  },
+  {
+    "idx": 42,
+    "name": "SELEÇÃO FORRÓ DE PAREDÃO DAS ANTIGAS",
+    "slug": "seleo_forro_de_paredo_das_antigas",
+    "declared": 888,
+    "actual": 888,
+    "grupo": "C",
+    "icon": "🪗"
+  },
+  {
+    "idx": 43,
+    "name": "SUMMER ELETROHITS gOLDS",
+    "slug": "summer_eletrohits_golds",
+    "declared": 392,
+    "actual": 392,
+    "grupo": "B",
+    "icon": "☀️"
+  },
+  {
+    "idx": 44,
+    "name": "V i LL ei ragem",
+    "slug": "v_i_ll_ei_ragem",
+    "declared": 158,
+    "actual": 158,
+    "grupo": "B",
+    "icon": "🌧️"
+  },
+  {
+    "idx": 45,
+    "name": "ⓑ ⓡ ⓔ ⓖ ⓐ",
+    "slug": "b_r_e_g_a",
+    "declared": 441,
+    "actual": 441,
+    "grupo": "A",
+    "icon": "💃"
+  },
+  {
+    "idx": 46,
+    "name": "🎡 TOCOU NO MIRABILANDIA PE 🎢",
+    "slug": "tocou_no_mirabilandia_pe",
+    "declared": 5187,
+    "actual": 5187,
+    "grupo": "A",
+    "icon": "🎡"
+  }
+]

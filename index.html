@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MFG Media CDs — Hub de Telemetria Musical</title>
+<meta name="description" content="Coleção digital de 46 CDs / +29.000 faixas. Mapa de distribuição, catálogo completo e telemetria Last.fm ao vivo.">
+<link rel="icon" href="assets/mfg_media_cds_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-bubbles" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<header id="main-header">
+  <div class="header-shine"></div>
+  <div class="header-container">
+    <img src="assets/mfg_media_cds_logo.png" alt="MFG Media CDs" class="logo">
+    <div class="header-text">
+      <h1>MFG Media CDs</h1>
+      <p class="tagline">Hub de Gerenciamento &amp; Telemetria Musical</p>
+    </div>
+    <div class="header-stats">
+      <div class="stat-pill"><span class="stat-num">46</span><span class="stat-label">CDs</span></div>
+      <div class="stat-pill"><span class="stat-num">29.203</span><span class="stat-label">faixas</span></div>
+    </div>
+  </div>
+  <nav id="nav-tabs">
+    <button class="tab-btn active" data-tab="dashboard"><span class="tab-icon">🗺️</span> Dashboard</button>
+    <button class="tab-btn" data-tab="catalogo"><span class="tab-icon">📦</span> Catálogo</button>
+    <button class="tab-btn" data-tab="telemetria"><span class="tab-icon">📡</span> Telemetria</button>
+  </nav>
+</header>
+
+<main id="content-area">
+
+  <!-- ===================== DASHBOARD ===================== -->
+  <section id="tab-dashboard" class="tab-content active">
+
+    <div class="window-box">
+      <div class="window-header">
+        <span class="window-title">🗺️ Mapa de Distribuição da Coleção Digital (46 CDs)</span>
+        <span class="window-dots"><i></i><i></i><i></i></span>
+      </div>
+      <div class="window-body">
+        <p class="window-sub">Passe o mouse sobre os blocos para destacar as conexões do ecossistema. Dados carregados de <code>dados/diagrama.txt</code> — edite esse arquivo para atualizar o mapa sem tocar no código.</p>
+        <div id="diagram-container" aria-label="Diagrama interativo do ecossistema musical"></div>
+      </div>
+    </div>
+
+    <div class="dash-grid">
+      <div class="window-box small">
+        <div class="window-header alt"><span class="window-title">📊 Distribuição por Grupo</span></div>
+        <div class="window-body">
+          <div id="grupo-breakdown"></div>
+        </div>
+      </div>
+      <div class="window-box small">
+        <div class="window-header alt"><span class="window-title">💾 Status do Sistema</span></div>
+        <div class="window-body">
+          <ul class="status-list">
+            <li><span class="led green"></span> Spotify (Cell/PC) — Scrobble OK</li>
+            <li><span class="led red"></span> Deezer Desktop (PC) — SEM scrobble</li>
+            <li><span class="led green"></span> Freezer (TV Box / Mi Box) — Scrobble OK</li>
+            <li><span class="led green"></span> Kodi (TV Box / Mi Box) — Scrobble OK</li>
+            <li><span class="led green"></span> Foobar2000 (Mi Box) — Scrobble OK</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CATÁLOGO ===================== -->
+  <section id="tab-catalogo" class="tab-content">
+    <div class="window-box">
+      <div class="window-header">
+        <span class="window-title">📦 Catálogo Completo — 46 CDs / 29.203 faixas</span>
+        <span class="window-dots"><i></i><i></i><i></i></span>
+      </div>
+      <div class="window-body">
+        <div class="catalog-toolbar">
+          <input id="search-cd" type="text" placeholder="🔎 Buscar CD pelo nome..." autocomplete="off">
+          <div class="filter-chips" id="filter-chips">
+            <button class="chip active" data-filtro="TODOS">Todos (46)</button>
+            <button class="chip" data-filtro="A">Grupo A · Streaming (23)</button>
+            <button class="chip" data-filtro="B">Grupo B · Híbridos (13)</button>
+            <button class="chip" data-filtro="C">Grupo C · Local/Nuvem (8)</button>
+            <button class="chip" data-filtro="MAG">Mag (2)</button>
+          </div>
+        </div>
+        <div id="catalog-grid" class="catalog-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TELEMETRIA ===================== -->
+  <section id="tab-telemetria" class="tab-content">
+    <div class="window-box player-skin">
+      <div class="window-header">
+        <span class="window-title">📡 Windows Media Player — Live Telemetry</span>
+        <span class="window-dots"><i></i><i></i><i></i></span>
+      </div>
+      <div class="window-body">
+        <p class="window-sub">Transmissão em tempo real do perfil <strong>MarcosMFFGG26</strong> via Last.fm API.</p>
+        <div id="lastfm-now-playing" class="lastfm-box">
+          <div class="loading-spin"></div>
+          <p>A sincronizar transmissão de dados…</p>
+        </div>
+        <div class="lastfm-links">
+          <a href="https://www.deezer.com/br/profile/1169213066" target="_blank" rel="noopener">Deezer</a>
+          <a href="https://open.spotify.com/user/marcos.francaixax1" target="_blank" rel="noopener">Spotify</a>
+          <a href="https://music.youtube.com/@marcosfranca1925" target="_blank" rel="noopener">YouTube Music</a>
+          <a href="https://www.last.fm/user/MarcosMFFGG26" target="_blank" rel="noopener">Last.fm</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="main-footer">
+  <p>MFG Media CDs — Coleção Digital Pessoal · Atualizado em 19/06/2026</p>
+</footer>
+
+<!-- ===================== MODAL DE FAIXAS ===================== -->
+<div id="music-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-content window-box">
+    <div class="window-header">
+      <span id="modal-title" class="window-title">Faixas do CD</span>
+      <button class="close-btn" onclick="fecharModal()" aria-label="Fechar">✕</button>
+    </div>
+    <div class="window-body">
+      <div class="nero-progress-wrap">
+        <div class="nero-progress-bar"><div class="nero-fill" id="nero-fill"></div></div>
+        <span class="nero-label" id="nero-label">A gravar pista de dados...</span>
+      </div>
+      <input id="search-track" type="text" placeholder="🔎 Filtrar faixas deste CD..." autocomplete="off">
+      <div id="tracklist-container"></div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
