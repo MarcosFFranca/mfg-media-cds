@@ -26,13 +26,14 @@
     </div>
     <div class="header-stats">
       <div class="stat-pill"><span class="stat-num">46</span><span class="stat-label">CDs</span></div>
-      <div class="stat-pill"><span class="stat-num">29.403</span><span class="stat-label">faixas</span></div>
+      <div class="stat-pill"><span class="stat-num">29.447</span><span class="stat-label">faixas</span></div>
     </div>
   </div>
   <nav id="nav-tabs">
     <button class="tab-btn active" data-tab="dashboard"><img src="assets/icones/menu_dashboard.png" class="tab-icon" alt=""> Dashboard</button>
     <button class="tab-btn" data-tab="catalogo"><img src="assets/icones/menu_catalogo.png" class="tab-icon" alt=""> Catálogo</button>
     <button class="tab-btn" data-tab="telemetria"><img src="assets/icones/menu_telemetria.png" class="tab-icon" alt=""> Telemetria</button>
+    <button class="tab-btn" data-tab="setup"><img src="assets/icones/menu_setup.png" class="tab-icon" alt=""> Setup</button>
   </nav>
 </header>
 
@@ -76,7 +77,7 @@
 
     <div class="window-box">
       <div class="window-header">
-        <span class="window-title">📖 Players &amp; Apps — O Que É Cada Um</span>
+        <span class="window-title"><img src="assets/icones/header_players_apps.png" class="header-icon" alt=""> Players &amp; Apps — O Que É Cada Um</span>
         <span class="window-dots"><i></i><i></i><i></i></span>
       </div>
       <div class="window-body">
@@ -106,7 +107,7 @@
   <section id="tab-catalogo" class="tab-content">
     <div class="window-box">
       <div class="window-header">
-        <span class="window-title"><img src="assets/icones/header_catalogo.png" class="header-icon" alt=""> Catálogo Completo — 46 CDs / 29.403 faixas</span>
+        <span class="window-title"><img src="assets/icones/header_catalogo.png" class="header-icon" alt=""> Catálogo Completo — 46 CDs / 29.447 faixas</span>
         <span class="window-dots"><i></i><i></i><i></i></span>
       </div>
       <div class="window-body">
@@ -149,6 +150,44 @@
     </div>
   </section>
 
+  <!-- ===================== SETUP ===================== -->
+  <section id="tab-setup" class="tab-content">
+
+    <div class="window-box">
+      <div class="window-header">
+        <span class="window-title">🗺️ Topologia de Áudio — Esquema de Ligação</span>
+        <span class="window-dots"><i></i><i></i><i></i></span>
+      </div>
+      <div class="window-body">
+        <p class="window-sub">Como o sinal de áudio percorre os aparelhos em cada ambiente, do streaming até as caixas de som. Dados carregados de <code>dados/topologia.txt</code>.</p>
+        <div id="topologia-container"></div>
+      </div>
+    </div>
+
+    <div class="window-box">
+      <div class="window-header">
+        <span class="window-title">🔌 Aparelhos</span>
+        <span class="window-dots"><i></i><i></i><i></i></span>
+      </div>
+      <div class="window-body">
+        <p class="window-sub">Clique em um aparelho para ver as especificações técnicas completas.</p>
+        <div id="aparelhos-grid" class="aparelhos-grid"></div>
+      </div>
+    </div>
+
+    <div class="window-box">
+      <div class="window-header">
+        <span class="window-title">⚙️ Configuração dos Players</span>
+        <span class="window-dots"><i></i><i></i><i></i></span>
+      </div>
+      <div class="window-body">
+        <p class="window-sub">Os ajustes aplicados em cada software/app para máxima fidelidade sonora.</p>
+        <div id="players-config-list"></div>
+      </div>
+    </div>
+
+  </section>
+
 </main>
 
 <footer id="main-footer">
@@ -168,8 +207,25 @@
         <div class="nero-progress-bar"><div class="nero-fill" id="nero-fill"></div></div>
         <span class="nero-label" id="nero-label">A gravar pista de dados...</span>
       </div>
-      <input id="search-track" type="text" placeholder="🔎 Filtrar faixas deste CD..." autocomplete="off">
+      <div class="track-toolbar">
+        <input id="search-track" type="text" placeholder="🔎 Filtrar faixas deste CD..." autocomplete="off">
+        <button id="download-json-btn" class="download-btn" title="Baixa só a LISTA com os nomes das faixas (.json) — não baixa os arquivos de música">⬇️ Lista (JSON)</button>
+      </div>
+      <p class="track-toolbar-note">A lista baixada contém apenas os <strong>nomes das faixas</strong> em formato de texto (.json) — não inclui os arquivos de áudio.</p>
       <div id="tracklist-container"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== MODAL DE ESPECIFICAÇÕES DO APARELHO ===================== -->
+<div id="device-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="device-modal-title">
+  <div class="modal-content window-box">
+    <div class="window-header">
+      <span id="device-modal-title" class="window-title">Especificações</span>
+      <button class="close-btn" onclick="fecharDeviceModal()" aria-label="Fechar">✕</button>
+    </div>
+    <div class="window-body">
+      <div id="device-modal-body"></div>
     </div>
   </div>
 </div>

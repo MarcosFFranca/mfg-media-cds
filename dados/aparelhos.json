@@ -1,0 +1,159 @@
+[
+  {
+    "id": "mibox",
+    "nome": "Xiaomi Mi Box S",
+    "ambiente": "Sala",
+    "icon_img": "assets/icones/device_mibox.png",
+    "resumo": "Streaming box Android TV que envia o sinal digital via SPDIF óptico para o DAC externo.",
+    "specs": [
+      { "grupo": "Geral", "itens": [
+        ["Sistema", "Android TV 8.1"],
+        ["CPU", "Cortex-A53 Quad-Core 64-bit"],
+        ["GPU", "Mali-450"],
+        ["RAM", "DDR3 2 GB"],
+        ["Armazenamento", "eMMC 8 GB"],
+        ["Dimensões", "95,25 × 95,25 × 16,7 mm — 147 g"]
+      ]},
+      { "grupo": "Conectividade", "itens": [
+        ["Wi-Fi", "802.11 a/b/g/n/ac — 2,4 GHz / 5 GHz"],
+        ["Bluetooth", "4.0"],
+        ["Portas", "HDMI 2.0a, USB 2.0, Saída de áudio digital (SPDIF óptico)"]
+      ]},
+      { "grupo": "Decodificação", "itens": [
+        ["Vídeo", "4K a 60fps · VP9, H.264, MPEG1/2/4, VC-1"],
+        ["Áudio", "Dolby, DTS · MP3, APE, FLAC"],
+        ["Resolução de saída", "4K (3840×2160)"]
+      ]}
+    ]
+  },
+  {
+    "id": "dac_fxaudio",
+    "nome": "DAC FX-Audio X6",
+    "ambiente": "Sala",
+    "icon_img": "assets/icones/device_dac_fxaudio.png",
+    "resumo": "Conversor digital-analógico externo que recebe o SPDIF da Mi Box e entrega sinal analógico de alta fidelidade para o Panasonic SA-PM03.",
+    "specs": [
+      { "grupo": "Chipset", "itens": [
+        ["DAC principal", "Cirrus Logic CS4398 (24bit/96kHz)"],
+        ["Amplificador de fone", "TPA6120 / TPA6120A2"],
+        ["Op-Amp", "LM4562NA, OP275 ou OPA2134 — soquete removível (rollable)"],
+        ["Receptor S/PDIF", "Cirrus Logic CS8416"],
+        ["Chip USB", "SA9023 / SA9123"]
+      ]},
+      { "grupo": "Entradas e Saídas", "itens": [
+        ["Entradas digitais", "USB (Tipo B), Óptica (Toslink), Coaxial"],
+        ["Saída fone", "P10 6.35mm (frontal)"],
+        ["Saída de linha", "RCA estéreo (traseira) — simultânea com a saída de fone"]
+      ]},
+      { "grupo": "Especificações de áudio", "itens": [
+        ["Potência (fone)", "520mW@16Ω · 450mW@32Ω · 250mW@64Ω · 165mW@120Ω"],
+        ["Impedância suportada", "16Ω a 300Ω (até 600Ω em fones de alta sensibilidade)"],
+        ["Taxa de amostragem", "USB: até 24bit/96kHz · Óptico/Coaxial: até 24bit/192kHz"],
+        ["Saída RCA (RMS)", "1.8V"],
+        ["SNR", "≈105dB"],
+        ["THD", "≤0.003%"],
+        ["Resposta de frequência", "20Hz–20kHz (±3dB)"],
+        ["Alimentação", "DC 12V 1A"]
+      ]}
+    ]
+  },
+  {
+    "id": "panasonic_pm03",
+    "nome": "Panasonic SA-PM03",
+    "ambiente": "Sala",
+    "icon_img": "assets/icones/device_panasonic_pm03.png",
+    "resumo": "Micro System Hi-Fi que recebe o sinal analógico do DAC via entrada AUX. Foco em fidelidade estéreo, não em potência bruta.",
+    "specs": [
+      { "grupo": "Geral", "itens": [
+        ["Categoria", "Micro System (Hi-Fi Compact)"],
+        ["Potência", "2× 14W RMS (total 28W)"],
+        ["Mídias", "Leitor de CD (Single-Play), Rádio AM/FM Digital"],
+        ["Conexões", "Entrada AUX traseira, saída para fone frontal"],
+        ["Recursos", "Equalizador DSP, Sound Virtualizer, Timer Sleep/Wake, relógio digital"]
+      ]},
+      { "grupo": "DAC e Amplificação", "itens": [
+        ["DAC interno", "MASH 1-bit (Multi-Stage Noise Shaping) — só atua na reprodução de CD; sem entrada digital"],
+        ["Processamento", "2 canais estéreo dedicados (sem decodificador 5.1)"],
+        ["Amplificação", "Bi-amplificada — canais separados para Woofers e Tweeters"],
+        ["Classe", "AB de alta eficiência, baixa THD"],
+        ["Equalização", "XBS (Extra Bass System) — realce psicoacústico de graves"],
+        ["Volume", "Codificador rotativo digital (sem ruído de potenciômetro)"]
+      ]},
+      { "grupo": "Por que precisa do DAC externo", "itens": [
+        ["Motivo", "O SA-PM03 não tem entrada digital — só processa áudio ao tocar CD. Por isso o sinal digital da Mi Box precisa passar primeiro pelo DAC FX-Audio X6, que converte para analógico antes de chegar na entrada AUX."]
+      ]}
+    ]
+  },
+  {
+    "id": "tvbox_x96",
+    "nome": "TV Box X96 Mate",
+    "ambiente": "Quarto",
+    "icon_img": "assets/icones/device_tvbox_x96.png",
+    "resumo": "Streaming box Android que envia o sinal digital via SPDIF óptico direto para o Panasonic SC-AK600, sem DAC intermediário.",
+    "specs": [
+      { "grupo": "Geral", "itens": [
+        ["Chipset", "X96Mate (H616)"],
+        ["CPU", "Allwinner H616 Quad-Core ARM Cortex-A53"],
+        ["GPU", "G31 OpenGL 3.2"],
+        ["RAM", "DDR3 4GB"],
+        ["Armazenamento", "eMMC 32GB/64GB"],
+        ["Sistema", "Android 10.0"]
+      ]},
+      { "grupo": "Conectividade", "itens": [
+        ["Wi-Fi", "IEEE 802.11 b/g/n/ac"],
+        ["Portas", "1× HDMI 2.0A, 1× AV, 2× USB (3.0 e 2.0), 1× RJ45 Ethernet, slot TF Card"],
+        ["Alimentação", "DC 5V/2A"]
+      ]},
+      { "grupo": "Áudio e Vídeo", "itens": [
+        ["Vídeo", "4K×2K@60fps · VP9, H.265, H.264, MPEG1/2/4, VC-1, Xvid"],
+        ["Áudio", "MP3, AAC, WMA, FLAC, Ogg · mixagem 7.1/5.1"],
+        ["DAC interno", "2 canais áudio digital-analógico, taxa de amostragem 16/20-bit"],
+        ["Taxa DAC", "8kHz–192kHz · SNR -95±2dB"]
+      ]}
+    ]
+  },
+  {
+    "id": "panasonic_ak600",
+    "nome": "Panasonic SC-AK600",
+    "ambiente": "Quarto",
+    "icon_img": "assets/icones/device_panasonic_ak600.png",
+    "resumo": "Sistema de som modular Home Theater com DAC interno — processa diretamente o SPDIF da TV Box, sem precisar de conversor externo.",
+    "specs": [
+      { "grupo": "Geral", "itens": [
+        ["Categoria", "Mini System (High Power) — Home Theater"],
+        ["Potência", "3200W PMPO / 380W RMS (sistema total) · ≈120W RMS por canal frontal"],
+        ["Mídia", "CD, CD-R/RW, CD-DA, MP3 — carrossel de até 5 CDs"],
+        ["Conectividade", "Entrada óptica e coaxial digital, entrada para fone"],
+        ["Construção", "Sistema 3 vias com câmaras separadas, dutos traseiros para subwoofer"]
+      ]},
+      { "grupo": "DAC e DSP", "itens": [
+        ["DAC interno", "MASH 1-bit — alta linearidade, sem distorção de cruzamento"],
+        ["Processador (DSP)", "Toshiba TC9446F — 24-bit × 24-bit, 50 MIPS"],
+        ["Decodificação", "Dolby Digital (AC-3) e Dolby Pro Logic via hardware"],
+        ["Entradas processadas", "Leitor de CD interno, Óptica TOSLINK, Coaxial RCA"]
+      ]},
+      { "grupo": "Amplificação", "itens": [
+        ["Classe", "H (módulos RSN — RSN311W64)"],
+        ["Vantagem da Classe H", "Voltagem variável: consome pouco em volume baixo, sobe instantaneamente nos picos de grave — mais eficiência térmica"],
+        ["Configuração", "Bi-amplificação passiva (woofers e tweeters com caminhos dedicados)"],
+        ["Subwoofer", "Saída RCA dedicada em nível de linha, abaixo de 80-100Hz"]
+      ]},
+      { "grupo": "Por que não precisa de DAC externo", "itens": [
+        ["Motivo", "O SC-AK600 já tem DAC e DSP internos completos — o DSP Toshiba identifica o tipo de sinal (estéreo ou Dolby 5.1) e o próprio aparelho converte e amplifica, sem precisar de conversor externo."]
+      ]}
+    ]
+  },
+  {
+    "id": "usb_audio_player_pro",
+    "nome": "Celular (USB Audio Player Pro)",
+    "ambiente": "Mobile",
+    "icon_img": "assets/icones/icon_usbaudioplayerpro.png",
+    "resumo": "Player de alta fidelidade para Android, usado no celular para tocar a coleção local com qualidade Hi-Res via USB DAC.",
+    "specs": [
+      { "grupo": "Sobre", "itens": [
+        ["Função", "App de áudio Hi-Fi para Android — foco em bit-perfect e suporte a DACs USB externos"],
+        ["Uso na coleção", "Reprodução local da biblioteca MFG Media CDs direto no celular"]
+      ]}
+    ]
+  }
+]

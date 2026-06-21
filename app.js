@@ -9,6 +9,7 @@ const LASTFM_API_KEY = 'c4658356d99de770453066f39f19e141';
 let MANIFEST = [];
 let currentFilter = 'TODOS';
 let currentTracks = [];
+let currentSlug = null;
 
 // --------------------------------------------------------------------------
 // Utilitários
@@ -163,6 +164,7 @@ function carregarMusicas(slug) {
 
   searchTrack.value = '';
   currentTracks = [];
+  currentSlug = slug;
   titulo.textContent = `A ler disco: ${cd ? cd.name : slug}...`;
   container.innerHTML = '';
   fill.style.width = '15%';
@@ -225,6 +227,27 @@ document.getElementById('search-track').addEventListener('input', e => {
   const filtered = currentTracks.filter(tr => tr.t.toLowerCase().includes(q));
   renderTracklist(filtered);
 });
+
+// --------------------------------------------------------------------------
+// Download do JSON da playlist atualmente aberta no modal
+// --------------------------------------------------------------------------
+function baixarJSONDoCD() {
+  if (!currentSlug || !currentTracks.length) return;
+  const cd = MANIFEST.find(c => c.slug === currentSlug);
+  const nomeBase = cd ? cd.name : currentSlug;
+  const nomeArquivo = `${nomeBase.replace(/[\\/:*?"<>|]/g, '')}.json`;
+  const blob = new Blob([JSON.stringify(currentTracks, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = nomeArquivo;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('download-json-btn').addEventListener('click', baixarJSONDoCD);
 
 function fecharModal() {
   document.getElementById('music-modal').classList.remove('open');
@@ -400,11 +423,228 @@ function clearHighlight(allNodeEls) {
   allNodeEls.forEach(el => el.classList.remove('hl', 'dim'));
 }
 
+// ==========================================================================
+// SETUP — Topologia de áudio, aparelhos e configuração dos players
+// ==========================================================================
+let APARELHOS = [];
+
+// --------------------------------------------------------------------------
+// Topologia de áudio — parser de dados/topologia.txt
+// --------------------------------------------------------------------------
+async function initTopologia() {
+  const container = document.getElementById('topologia-container');
+  let ambientes = [];
+  let notas = [];
+
+  try {
+    const res = await fetch('dados/topologia.txt');
+    if (!res.ok) throw new Error('topologia.txt não encontrado');
+    const text = await res.text();
+    const lines = text.split('\n');
+    let ambienteAtual = null;
+
+    for (const raw of lines) {
+      const line = raw.trim();
+      if (!line || line.startsWith('#')) continue;
+      const parts = line.split('|').map(p => p.trim());
+
+      if (parts[0] === 'AMBIENTE') {
+        ambienteAtual = { nome: parts[1], steps: [] };
+        ambientes.push(ambienteAtual);
+      } else if (parts[0] === 'STEP' && ambienteAtual) {
+        ambienteAtual.steps.push({ aparelhoId: parts[1], tipoCabo: parts[2], descCabo: parts[3] || '' });
+      } else if (parts[0] === 'NOTA') {
+        notas.push(parts[1]);
+      }
+    }
+  } catch (err) {
+    container.innerHTML = `<p class="catalog-empty">⚠️ Não foi possível carregar dados/topologia.txt</p>`;
+    console.error(err);
+    return;
+  }
+
+  renderTopologia(ambientes, notas);
+}
+
+function renderTopologia(ambientes, notas) {
+  const container = document.getElementById('topologia-container');
+
+  const ambientesHtml = ambientes.map(amb => {
+    const stepsHtml = amb.steps.map((step, i) => {
+      const aparelho = APARELHOS.find(a => a.id === step.aparelhoId);
+      const nome = aparelho ? aparelho.nome : step.aparelhoId;
+      const icon = aparelho ? aparelho.icon_img : '';
+      const isLast = i === amb.steps.length - 1 || step.tipoCabo === 'fim';
+
+      const noHtml = `
+        <div class="topo-node">
+          ${icon ? `<img src="${icon}" class="topo-node-icon" alt="">` : ''}
+          <span class="topo-node-name">${escapeHTML(nome)}</span>
+        </div>`;
+
+      const caboHtml = !isLast ? `
+        <div class="topo-cable ${step.tipoCabo}">
+          <span class="topo-arrow">➜</span>
+          <span class="topo-cable-label">${escapeHTML(step.descCabo)}</span>
+        </div>` : '';
+
+      return noHtml + caboHtml;
+    }).join('');
+
+    return `
+      <div class="topo-ambiente">
+        <p class="diagram-block-label">📍 Ambiente: ${escapeHTML(amb.nome)}</p>
+        <div class="topo-row">${stepsHtml}</div>
+      </div>`;
+  }).join('');
+
+  const legenda = `
+    <div class="topo-legenda">
+      <span><span class="topo-swatch digital"></span> Digital</span>
+      <span><span class="topo-swatch analogico"></span> Analógico</span>
+    </div>`;
+
+  const notasHtml = notas.length ? `
+    <div class="diagram-block diagram-note-block">
+      <p class="diagram-block-label">💡 Notas Técnicas</p>
+      <div class="edge-label-list">
+        ${notas.map(n => `<div>${escapeHTML(n)}</div>`).join('')}
+      </div>
+    </div>` : '';
+
+  container.innerHTML = legenda + ambientesHtml + notasHtml;
+}
+
+// --------------------------------------------------------------------------
+// Grid de aparelhos clicáveis
+// --------------------------------------------------------------------------
+async function initAparelhos() {
+  const grid = document.getElementById('aparelhos-grid');
+  try {
+    const res = await fetch('dados/aparelhos.json');
+    if (!res.ok) throw new Error('aparelhos.json não encontrado');
+    APARELHOS = await res.json();
+  } catch (err) {
+    grid.innerHTML = `<p class="catalog-empty">⚠️ Não foi possível carregar dados/aparelhos.json</p>`;
+    console.error(err);
+    return;
+  }
+
+  grid.innerHTML = APARELHOS.map(ap => `
+    <div class="aparelho-card" tabindex="0" role="button" data-id="${ap.id}" aria-label="Ver especificações de ${escapeHTML(ap.nome)}">
+      <img src="${ap.icon_img}" class="aparelho-img" alt="">
+      <h3>${escapeHTML(ap.nome)}</h3>
+      <span class="aparelho-ambiente">${escapeHTML(ap.ambiente)}</span>
+      <p class="aparelho-resumo">${escapeHTML(ap.resumo)}</p>
+    </div>
+  `).join('');
+
+  grid.querySelectorAll('.aparelho-card').forEach(card => {
+    card.addEventListener('click', () => abrirDeviceModal(card.dataset.id));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrirDeviceModal(card.dataset.id); }
+    });
+  });
+
+  // a topologia depende dos aparelhos já carregados para mostrar nome/ícone corretos
+  initTopologia();
+}
+
+function abrirDeviceModal(id) {
+  const ap = APARELHOS.find(a => a.id === id);
+  if (!ap) return;
+  const modal = document.getElementById('device-modal');
+  const title = document.getElementById('device-modal-title');
+  const body = document.getElementById('device-modal-body');
+
+  title.innerHTML = `<img src="${ap.icon_img}" class="header-icon" alt=""> ${escapeHTML(ap.nome)}`;
+
+  const specsHtml = ap.specs.map(grupo => `
+    <div class="spec-group">
+      <p class="spec-group-title">${escapeHTML(grupo.grupo)}</p>
+      <table class="spec-table">
+        ${grupo.itens.map(([campo, valor]) => `
+          <tr><td class="spec-campo">${escapeHTML(campo)}</td><td class="spec-valor">${escapeHTML(valor)}</td></tr>
+        `).join('')}
+      </table>
+    </div>`).join('');
+
+  body.innerHTML = `
+    <p class="window-sub">${escapeHTML(ap.resumo)}</p>
+    ${specsHtml}`;
+
+  modal.classList.add('open');
+}
+
+function fecharDeviceModal() {
+  document.getElementById('device-modal').classList.remove('open');
+}
+window.fecharDeviceModal = fecharDeviceModal;
+
+document.getElementById('device-modal').addEventListener('click', e => {
+  if (e.target.id === 'device-modal') fecharDeviceModal();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') fecharDeviceModal();
+});
+
+// --------------------------------------------------------------------------
+// Configuração dos players
+// --------------------------------------------------------------------------
+async function initPlayersConfig() {
+  const container = document.getElementById('players-config-list');
+  let players = [];
+  try {
+    const res = await fetch('dados/players_config.json');
+    if (!res.ok) throw new Error('players_config.json não encontrado');
+    players = await res.json();
+  } catch (err) {
+    container.innerHTML = `<p class="catalog-empty">⚠️ Não foi possível carregar dados/players_config.json</p>`;
+    console.error(err);
+    return;
+  }
+
+  container.innerHTML = players.map(p => `
+    <div class="player-config-card">
+      <div class="player-config-header">
+        <img src="${p.icon_img}" class="player-config-icon" alt="">
+        <div>
+          <h3>${escapeHTML(p.nome)}</h3>
+          <p class="player-config-intro">${escapeHTML(p.intro)}</p>
+          ${p.settings_level ? `<span class="player-config-level">Settings level: ${escapeHTML(p.settings_level)}</span>` : ''}
+        </div>
+      </div>
+
+      ${p.foto_demo ? `
+        <figure class="player-config-figure">
+          <img src="${p.foto_demo}" alt="${escapeHTML(p.foto_legenda || '')}">
+          <figcaption>${escapeHTML(p.foto_legenda || '')}</figcaption>
+        </figure>` : ''}
+
+      ${p.grupos.map(grupo => `
+        <div class="spec-group">
+          <p class="spec-group-title">${escapeHTML(grupo.titulo)} <span class="player-config-path">${escapeHTML(grupo.caminho)}</span></p>
+          <table class="spec-table config-table">
+            ${grupo.itens.map(([campo, valor, motivo]) => `
+              <tr>
+                <td class="spec-campo">${escapeHTML(campo)}</td>
+                <td class="spec-valor"><strong>${escapeHTML(valor)}</strong>${motivo ? `<br><small>${escapeHTML(motivo)}</small>` : ''}</td>
+              </tr>`).join('')}
+          </table>
+        </div>`).join('')}
+
+      ${p.conclusao ? `<p class="player-config-conclusao">${escapeHTML(p.conclusao)}</p>` : ''}
+    </div>
+  `).join('');
+}
+
 // --------------------------------------------------------------------------
 // Inicialização
 // --------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
   initCatalogo();
   initDiagrama();
+  initAparelhos();
+  initPlayersConfig();
   atualizarTelemetria();
 });

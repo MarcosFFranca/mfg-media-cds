@@ -477,12 +477,39 @@ body {
 .cd-desc-text { font-size: 0.8rem; color: var(--text-dim); line-height: 1.45; }
 .cd-desc-text strong { color: var(--text-ink); }
 
+.track-toolbar {
+  display: flex; gap: 8px; margin-bottom: 6px;
+}
+.track-toolbar-note {
+  font-size: 0.68rem; color: var(--text-dim); margin: 0 0 10px; line-height: 1.3;
+}
+.track-toolbar-note strong { color: var(--text-ink); }
 #search-track {
-  width: 100%; margin-bottom: 10px;
+  flex: 1;
   background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 16px;
   padding: 8px 14px; color: var(--text-ink); font-family: var(--font-body); font-size: 0.85rem;
 }
 #search-track::placeholder { color: var(--text-dim); }
+
+.download-btn {
+  flex-shrink: 0;
+  background: linear-gradient(to bottom, var(--gel-silver-top) 0%, var(--gel-silver-bot) 100%);
+  border: 2px solid #ffffff;
+  border-radius: 16px;
+  color: #173b54;
+  padding: 8px 14px;
+  font-weight: 700;
+  font-size: 0.78rem;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.8);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  white-space: nowrap;
+}
+.download-btn:hover {
+  transform: translateY(-1px) scale(1.03);
+  background: linear-gradient(to bottom, #ffffff 0%, var(--aero-cyan) 100%);
+  box-shadow: 0 5px 10px rgba(0,210,255,0.4);
+}
 
 #tracklist-container {
   flex: 1; min-height: 0;
@@ -530,4 +557,123 @@ body {
 /* Foco visível para acessibilidade */
 a:focus-visible, button:focus-visible, input:focus-visible, .cd-card:focus-visible {
   outline: 2px solid var(--aero-cyan);
+}
+
+/* ==========================================================================
+   SETUP — Topologia, Aparelhos e Configuração dos Players
+   ========================================================================== */
+
+/* ---------- Topologia de áudio ---------- */
+.topo-legenda { display: flex; gap: 18px; margin-bottom: 14px; font-size: 0.78rem; color: var(--text-dim); }
+.topo-legenda span { display: flex; align-items: center; gap: 6px; }
+.topo-swatch { width: 18px; height: 4px; border-radius: 2px; display: inline-block; }
+.topo-swatch.digital { background: var(--aero-cyan); box-shadow: 0 0 6px var(--aero-cyan); }
+.topo-swatch.analogico { background: var(--neon-red); box-shadow: 0 0 6px var(--neon-red); }
+
+.topo-ambiente { margin-bottom: 22px; }
+.topo-row {
+  display: flex; align-items: center; gap: 4px; flex-wrap: wrap;
+  margin-top: 10px;
+}
+.topo-node {
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  text-align: center;
+  min-width: 120px;
+}
+.topo-node-icon { width: 48px; height: 48px; object-fit: contain; display: block; margin: 0 auto 6px; }
+.topo-node-name { font-size: 0.78rem; font-weight: 700; display: block; }
+
+.topo-cable {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 0 6px; min-width: 90px;
+}
+.topo-arrow { font-size: 1.4rem; line-height: 1; }
+.topo-cable-label { font-size: 0.62rem; color: var(--text-dim); text-align: center; max-width: 100px; }
+.topo-cable.digital .topo-arrow { color: var(--aero-cyan); text-shadow: 0 0 8px var(--aero-cyan); }
+.topo-cable.analogico .topo-arrow { color: var(--neon-red); text-shadow: 0 0 8px var(--neon-red); }
+
+@media (max-width: 700px) {
+  .topo-row { flex-direction: column; }
+  .topo-cable { flex-direction: row; padding: 4px 0; }
+  .topo-arrow { transform: rotate(90deg); }
+}
+
+/* ---------- Grid de aparelhos ---------- */
+.aparelhos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 16px;
+}
+.aparelho-card {
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+.aparelho-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--aero-cyan);
+  box-shadow: 0 10px 22px rgba(0,210,255,0.35);
+}
+.aparelho-img { width: 100%; max-height: 90px; object-fit: contain; margin-bottom: 8px; }
+.aparelho-card h3 { margin: 0 0 4px; font-size: 0.85rem; font-weight: 700; }
+.aparelho-ambiente {
+  display: inline-block; font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.04em; padding: 2px 8px; border-radius: 10px;
+  background: rgba(0,210,255,0.18); color: var(--aero-cyan); margin-bottom: 6px;
+}
+.aparelho-resumo { font-size: 0.7rem; color: var(--text-dim); line-height: 1.35; margin: 0; }
+
+/* ---------- Tabelas de especificação (modal de aparelho + config de players) ---------- */
+.spec-group { margin-bottom: 16px; }
+.spec-group-title {
+  font-family: var(--font-display); font-size: 0.8rem; color: var(--aero-cyan);
+  margin: 0 0 6px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.spec-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+.spec-table tr { border-bottom: 1px solid rgba(255,255,255,0.08); }
+.spec-table tr:last-child { border-bottom: none; }
+.spec-campo { padding: 6px 8px 6px 0; color: var(--text-dim); width: 38%; vertical-align: top; }
+.spec-valor { padding: 6px 0; color: var(--text-ink); }
+.spec-valor small { color: var(--text-dim); font-size: 0.7rem; }
+
+/* ---------- Configuração dos players ---------- */
+.player-config-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.player-config-header { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
+.player-config-icon { width: 48px; height: 48px; object-fit: contain; flex-shrink: 0; }
+.player-config-header h3 { margin: 0 0 4px; font-size: 0.95rem; }
+.player-config-intro { margin: 0 0 4px; font-size: 0.78rem; color: var(--text-dim); line-height: 1.4; }
+.player-config-level {
+  font-size: 0.66rem; font-weight: 700; color: var(--neon-green);
+  background: rgba(57,255,20,0.15); padding: 2px 8px; border-radius: 8px; display: inline-block;
+}
+.player-config-path { font-size: 0.66rem; font-weight: 500; color: var(--text-dim); text-transform: none; letter-spacing: 0; font-family: var(--font-mono); }
+
+.player-config-figure { margin: 0 0 14px; text-align: center; }
+.player-config-figure img {
+  width: 100%; max-width: 360px; border-radius: 8px; border: 1px solid var(--glass-border);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+.player-config-figure figcaption { font-size: 0.68rem; color: var(--text-dim); margin-top: 6px; }
+
+.config-table .spec-campo { width: 42%; }
+.player-config-conclusao {
+  font-size: 0.76rem; color: var(--text-dim); font-style: italic; line-height: 1.45;
+  margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--glass-border);
+}
+
+@media (max-width: 600px) {
+  .player-config-header { flex-direction: column; align-items: center; text-align: center; }
 }

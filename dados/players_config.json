@@ -1,0 +1,164 @@
+[
+  {
+    "id": "kodi",
+    "nome": "Kodi (Hi-Fi Master Setup)",
+    "icon_img": "assets/icones/icon_kodi.png",
+    "foto_demo": "assets/icones/foto_demo_kodi.jpeg",
+    "foto_legenda": "Skin Confluence em uso real na TV Box, tocando o CD Summer Eletrohits gOLDS.",
+    "intro": "Configuração usada no Kodi (Mi Box e TV Box) para transporte digital com o mínimo de processamento possível, priorizando fidelidade ao arquivo original.",
+    "settings_level": "Expert (libera todas as configurações avançadas do sistema)",
+    "grupos": [
+      {
+        "titulo": "Audio Settings",
+        "caminho": "Settings → System → Audio",
+        "itens": [
+          ["Audio output device", "Android, IEC (Kodi IEC packer)", "Sinal bruto direto para a placa, processando menos o áudio no Android"],
+          ["Number of channels", "2.0", ""],
+          ["Output configuration", "Best match", ""],
+          ["Resample quality", "Maximum", ""],
+          ["Keep audio device alive", "Always (ou 1 Minute)", ""],
+          ["Allow passthrough", "Disabled", "Garante que o Kodi faça a decodificação matemática perfeita do FLAC antes de enviar"]
+        ]
+      },
+      {
+        "titulo": "Player Settings",
+        "caminho": "Settings → Player → Music",
+        "itens": [
+          ["Visualization", "None", "Desativa gráficos na tela para economizar processamento e focar na pureza do som"],
+          ["Volume adjustment", "Off", "Desativa ganho digital automático; volume 100% original, controlado pelo sistema de som"]
+        ]
+      },
+      {
+        "titulo": "Services Settings",
+        "caminho": "Settings → Services → Caching",
+        "itens": [
+          ["Memory size", "256MB", "Memória RAM dedicada para estocar o áudio antes de tocar"],
+          ["Read factor", "10x", "Lê o arquivo 10× mais rápido que o tempo de reprodução, enchendo o buffer instantaneamente"],
+          ["Chunk size", "512KB", "Tamanho ideal de pacote para transmissão contínua via rede/cabo, sem perdas"]
+        ]
+      },
+      {
+        "titulo": "Interface",
+        "caminho": "Geral",
+        "itens": [
+          ["Skin", "Confluence", "Tema visual clássico e disposição dos menus"],
+          ["Visualização de músicas", "Tocando agora (Now Playing)", ""],
+          ["Ordenação", "File", "Organiza a lista pelo nome/ordem dos arquivos físicos"]
+        ]
+      }
+    ],
+    "conclusao": "O transporte digital fica completamente blindado: processamento mínimo no Android, reamostragem máxima no Kodi, zero firulas visuais na tela e um super buffer de memória para o som nunca engasgar."
+  },
+  {
+    "id": "foobar2000",
+    "nome": "foobar2000 Mobile",
+    "icon_img": "assets/icones/icon_foobar2000.png",
+    "foto_demo": "assets/icones/foto_demo_foobar_eq.jpg",
+    "foto_legenda": "Curva real do equalizador DSP em uso, com atenuação entre 77Hz e 220Hz.",
+    "intro": "Configuração do foobar2000 Mobile com ajuste fino de equalizador para corrigir o reforço acústico natural do ambiente.",
+    "grupos": [
+      {
+        "titulo": "Audio",
+        "caminho": "Tools → Settings → Audio",
+        "itens": [
+          ["Output device", "Default", "Garante estabilidade total na transmissão, sem engasgos com o sistema"],
+          ["Output data format (Bit depth)", "32-bit", "Resolução máxima do player — evita arredondamentos matemáticos após o equalizador"]
+        ]
+      },
+      {
+        "titulo": "ReplayGain",
+        "caminho": "Tools → Settings → ReplayGain",
+        "itens": [
+          ["Processing", "None", "Ignora alteração automática de volume por álbum/faixa — mantém a dinâmica bruta original"]
+        ]
+      },
+      {
+        "titulo": "DSP Manager — Equalizer",
+        "caminho": "Tools → DSP manager → Equalizer",
+        "itens": [
+          ["Equalizer", "Enabled", ""],
+          ["Ajuste dos sliders", "Atenuação em 77Hz, 110Hz, 156Hz e 220Hz", "Correção acústica manual: remove o excesso de médio-grave que embolaria no ambiente, deixando o grave nivelado, gordo e profundo, e abrindo espaço para as vozes"]
+        ]
+      }
+    ],
+    "conclusao": null
+  },
+  {
+    "id": "usb_audio_player_pro",
+    "nome": "USB Audio Player PRO",
+    "icon_img": "assets/icones/icon_usbaudioplayerpro.png",
+    "foto_demo": "assets/icones/foto_demo_usbplayer.jpeg",
+    "foto_legenda": "Fila de reprodução real no celular, mostrando 597 faixas e o codec MP3 320kbps em Direct 44.1kHz.",
+    "intro": "Configuração do USB Audio Player PRO no celular, priorizando integração estável com o Android e proteção contra clipping.",
+    "grupos": [
+      {
+        "titulo": "Audio",
+        "caminho": "Settings → Audio",
+        "itens": [
+          ["Bit perfect", "Disabled", "Permite que o app/sistema processem o sinal antes da saída"],
+          ["DSD playback mode", "PCM", "Converte arquivos DSD em PCM para reprodução no sistema"],
+          ["DSD to PCM sampling rate", "352800 Hz", ""],
+          ["DSD to PCM gain", "+6dB", "Compensa a perda natural de volume do DSD ao converter para PCM"],
+          ["Invert phase", "Disabled", ""],
+          ["Crossfade", "Disabled", ""],
+          ["ReplayGain", "Disabled", "Preserva a dinâmica original de estúdio"],
+          ["Limit volume to prevent clipping", "Enabled", "Evita distorções e cortes digitais em picos altos"],
+          ["Equalizer / Tone control / MorphIt", "Disabled", "Mantém a assinatura sonora padrão dos arquivos"]
+        ]
+      },
+      {
+        "titulo": "MQA",
+        "caminho": "Settings → MQA",
+        "itens": [
+          ["Show playback information", "Enabled", ""],
+          ["Deep scan", "Disabled", ""],
+          ["Check if USB DAC supports MQA", "Disabled", ""]
+        ]
+      },
+      {
+        "titulo": "HiRes Audio",
+        "caminho": "Settings → HiRes audio",
+        "itens": [
+          ["DoP/Native DSD when possible", "Enabled", ""],
+          ["Ignore system EQ and Dolby", "Disabled", "Permite que EQ/Dolby globais do Android continuem afetando o app"]
+        ]
+      },
+      {
+        "titulo": "Android Audio",
+        "caminho": "Settings → Android audio",
+        "itens": [
+          ["Play through Android", "Enabled", "Usa o motor de áudio padrão do Android"],
+          ["Force 16-bit", "Disabled", ""]
+        ]
+      },
+      {
+        "titulo": "USB Audio",
+        "caminho": "Settings → USB audio",
+        "itens": [
+          ["Use USB DAC", "Enabled", "Envia o sinal direto para um DAC externo conectado"],
+          ["USB tweak 2", "Enabled", "Otimização específica para evitar falhas/engasgos na transmissão"],
+          ["Force 16-bit", "Enabled", "Trava a profundidade em 16-bit ao enviar pela conexão USB"],
+          ["Play silence on system audio", "Enabled", "Evita que o Android pause o canal de áudio em segundo plano"]
+        ]
+      },
+      {
+        "titulo": "Volume",
+        "caminho": "Settings → Volume",
+        "itens": [
+          ["Use volume rocker buttons", "Enabled", ""],
+          ["Hardware volume slider", "Enabled", ""],
+          ["Volume fade out control", "Enabled", ""]
+        ]
+      },
+      {
+        "titulo": "UPnP",
+        "caminho": "Settings → UPnP",
+        "itens": [
+          ["Auto start UPnP server / renderer", "Enabled", ""],
+          ["Use UPnP art URL", "Enabled", "Carrega capas remotamente via servidor UPnP"]
+        ]
+      }
+    ],
+    "conclusao": null
+  }
+]

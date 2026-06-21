@@ -1,0 +1,21 @@
+# ==========================================================================
+# TOPOLOGIA DE ÁUDIO — Esquema de ligação dos aparelhos eletrônicos
+# ==========================================================================
+# Edite manualmente para refletir mudanças no setup físico.
+# Sintaxe: AMBIENTE | nome_do_ambiente
+#          STEP | id_aparelho | tipo_de_cabo | descrição_curta_do_cabo
+# tipo_de_cabo: digital ou analogico (controla a cor da seta no site)
+# ==========================================================================
+
+AMBIENTE | Sala
+STEP | mibox | digital | Cabo Óptico (SPDIF)
+STEP | dac_fxaudio | analogico | Cabo P2 → RCA (AUX)
+STEP | panasonic_pm03 | fim |
+
+AMBIENTE | Quarto
+STEP | tvbox_x96 | digital | Cabo Óptico (SPDIF Digital)
+STEP | panasonic_ak600 | fim |
+
+# --- NOTAS TÉCNICAS ---
+NOTA | O Panasonic SA-PM03 não tem entrada digital — seu DAC interno só atua ao reproduzir CD. Por isso o sinal da Mi Box passa primeiro pelo DAC FX-Audio X6, que converte para analógico antes de entrar no AUX.
+NOTA | O Panasonic SC-AK600 já tem DAC e DSP internos completos (Toshiba TC9446F) — recebe o SPDIF da TV Box diretamente, sem precisar de conversor externo.

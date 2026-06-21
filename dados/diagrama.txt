@@ -9,8 +9,8 @@
 
 # --- BLOCO 1: FONTES DE DADOS ---
 NODE | fonte_hd       | BLOCO1 | HD                    | Disco Rígido Externo         | icon:💾 | icon_img:assets/icones/diagrama_hd.png
-NODE | fonte_pen1     | BLOCO1 | Pendrive 1            | Espelho do HD                | icon:🔌
-NODE | fonte_pen2     | BLOCO1 | Pendrive 2            | Espelho do HD                | icon:🔌
+NODE | fonte_pen1     | BLOCO1 | Pendrive 1            | Espelho do HD                | icon:🔌 | icon_img:assets/icones/diagrama_pendrive1.png
+NODE | fonte_pen2     | BLOCO1 | Pendrive 2            | Espelho do HD                | icon:🔌 | icon_img:assets/icones/diagrama_pendrive2.png
 NODE | fonte_nuvem    | BLOCO1 | Nuvem (Backup)        | TeraBox — só backup/download | icon:☁️ | icon_img:assets/icones/diagrama_nuvem.png
 NODE | fonte_celular  | BLOCO1 | Dispositivo Móvel     | Memória Interna do Celular   | icon:📱 | icon_img:assets/icones/diagrama_celular_fonte.png
 NODE | fonte_stream   | BLOCO1 | Streaming             | Spotify / Deezer / YT Music  | icon:🌐 | icon_img:assets/icones/diagrama_streaming.png
@@ -43,5 +43,5 @@ EDGE_LABEL | fonte_nuvem | lastfm | NOTA: O TeraBox guarda as playlists como bac
 
 # --- METADADOS GERAIS ---
 META | total_cds | 46
-META | total_faixas | 29403
+META | total_faixas | 29447
 META | atualizado_em | 19/06/2026
