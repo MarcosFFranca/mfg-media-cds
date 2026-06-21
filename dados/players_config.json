@@ -4,7 +4,7 @@
     "nome": "Kodi (Hi-Fi Master Setup)",
     "icon_img": "assets/icones/icon_kodi.png",
     "foto_demo": "assets/icones/foto_demo_kodi.jpeg",
-    "foto_legenda": "Skin Confluence em uso real na TV Box, tocando o CD Summer Eletrohits gOLDS.",
+    "foto_legenda": "Skin Confluence em uso real na TV Box.",
     "intro": "Configuração usada no Kodi (Mi Box e TV Box) para transporte digital com o mínimo de processamento possível, priorizando fidelidade ao arquivo original.",
     "settings_level": "Expert (libera todas as configurações avançadas do sistema)",
     "grupos": [
@@ -88,7 +88,6 @@
     "nome": "USB Audio Player PRO",
     "icon_img": "assets/icones/icon_usbaudioplayerpro.png",
     "foto_demo": "assets/icones/foto_demo_usbplayer.jpeg",
-    "foto_legenda": "Fila de reprodução real no celular, mostrando 597 faixas e o codec MP3 320kbps em Direct 44.1kHz.",
     "intro": "Configuração do USB Audio Player PRO no celular, priorizando integração estável com o Android e proteção contra clipping.",
     "grupos": [
       {

@@ -617,8 +617,8 @@ async function initPlayersConfig() {
 
       ${p.foto_demo ? `
         <figure class="player-config-figure">
-          <img src="${p.foto_demo}" alt="${escapeHTML(p.foto_legenda || '')}">
-          <figcaption>${escapeHTML(p.foto_legenda || '')}</figcaption>
+          <img src="${p.foto_demo}" alt="${escapeHTML(p.foto_legenda || p.nome)}">
+          ${p.foto_legenda ? `<figcaption>${escapeHTML(p.foto_legenda)}</figcaption>` : ''}
         </figure>` : ''}
 
       ${p.grupos.map(grupo => `

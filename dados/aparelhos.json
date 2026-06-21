@@ -62,22 +62,38 @@
     "nome": "Panasonic SA-PM03",
     "ambiente": "Sala",
     "icon_img": "assets/icones/device_panasonic_pm03.png",
-    "resumo": "Micro System Hi-Fi que recebe o sinal analógico do DAC via entrada AUX. Foco em fidelidade estéreo, não em potência bruta.",
+    "resumo": "Micro System estéreo compacto e minimalista do início dos anos 2000, com tampa de CD motorizada de abertura vertical. Recebe o sinal analógico do DAC via entrada AUX — foco em fidelidade estéreo, não em potência bruta.",
     "specs": [
-      { "grupo": "Geral", "itens": [
-        ["Categoria", "Micro System (Hi-Fi Compact)"],
-        ["Potência", "2× 14W RMS (total 28W)"],
-        ["Mídias", "Leitor de CD (Single-Play), Rádio AM/FM Digital"],
-        ["Conexões", "Entrada AUX traseira, saída para fone frontal"],
-        ["Recursos", "Equalizador DSP, Sound Virtualizer, Timer Sleep/Wake, relógio digital"]
+      { "grupo": "Geral e Conectividade", "itens": [
+        ["Categoria", "Micro System Estéreo Compacto (Sistema SC-PM03)"],
+        ["Mídia suportada", "Leitor mecânico superior para 1 CD de áudio (CD-DA) e CD-R/RW. Não decodifica arquivos de dados MP3"],
+        ["Entrada AUX", "1× RCA traseira (250 mV / 47 kΩ) — ideal para receptores Bluetooth, smartphones e computadores"],
+        ["Saída de fone", "Jack 3.5mm no painel frontal"],
+        ["Caixas acústicas", "Terminais de mola para cabo paralelo descarnado (raw cable)"],
+        ["Sintonizador", "Rádio AM (520–1710 kHz) e FM (87.5–108.0 MHz), com memória de estações"]
       ]},
-      { "grupo": "DAC e Amplificação", "itens": [
-        ["DAC interno", "MASH 1-bit (Multi-Stage Noise Shaping) — só atua na reprodução de CD; sem entrada digital"],
-        ["Processamento", "2 canais estéreo dedicados (sem decodificador 5.1)"],
-        ["Amplificação", "Bi-amplificada — canais separados para Woofers e Tweeters"],
-        ["Classe", "AB de alta eficiência, baixa THD"],
-        ["Equalização", "XBS (Extra Bass System) — realce psicoacústico de graves"],
-        ["Volume", "Codificador rotativo digital (sem ruído de potenciômetro)"]
+      { "grupo": "DAC e DSP", "itens": [
+        ["DAC interno", "Sistema proprietário MASH 1-bit (Multi-Stage Noise Shaping), série MN da Matsushita/Panasonic — oversampling e modelagem de ruído de alta frequência para reconstrução analógica de alta linearidade"],
+        ["Processamento (DSP)", "Sem equalizador gráfico — assinatura sonora purista de fábrica, diferente do SC-PM03 (que traz presets dedicados)"],
+        ["Sound Virtualizer", "Processamento espacial que atua no atraso/fase do sinal estéreo, mantendo médios (vozes) centrados e ampliando largura/profundidade. Otimizado para as caixas SB-PM03 — não funciona no modo fone de ouvido"],
+        ["Modo Flat", "Com o Virtualizer desligado, o sinal passa direto pela etapa Classe AB sem mascaramento — ideal para reprodução fiel de CDs originais"]
+      ]},
+      { "grupo": "Amplificação", "itens": [
+        ["Classe", "AB puramente analógica"],
+        ["Power IC", "Circuito híbrido LA4625 — som quente, encorpado e musical, sem distorção de cruzamento"],
+        ["Potência", "30W RMS total (15W RMS por canal a 6Ω, 1kHz, THD 10%)"],
+        ["Eficiência", "Dissipa 30–40% da energia em calor — dissipador interno de alumínio, aquecimento normal na carcaça traseira"],
+        ["Consumo", "≈45W na tomada"]
+      ]},
+      { "grupo": "Construção Acústica (Caixas SB-PM03)", "itens": [
+        ["Gabinete", "2 vias, pórtico Bass Reflex traseiro em madeira"],
+        ["Woofer", "3,5\" (9cm), cone de longo deslocamento"],
+        ["Tweeter", "2,3\" (6cm)"],
+        ["Resposta de frequência", "48Hz–22kHz (±6dB)"],
+        ["Bass Reflex", "Duto traseiro — caixas próximas a uma parede (20–50cm) usam a parede como extensão do duto, reforçando o grave"]
+      ]},
+      { "grupo": "Medição de campo (Sala)", "itens": [
+        ["Fs da acústica da sala", "38Hz — grave comparável ao de uma JBL Boombox, mesmo sem DSP (audível até ~30Hz; frequências de 50Hz+ mais fracas que as de 40Hz)"]
       ]},
       { "grupo": "Por que precisa do DAC externo", "itens": [
         ["Motivo", "O SA-PM03 não tem entrada digital — só processa áudio ao tocar CD. Por isso o sinal digital da Mi Box precisa passar primeiro pelo DAC FX-Audio X6, que converte para analógico antes de chegar na entrada AUX."]
@@ -117,26 +133,53 @@
     "nome": "Panasonic SC-AK600",
     "ambiente": "Quarto",
     "icon_img": "assets/icones/device_panasonic_ak600.png",
-    "resumo": "Sistema de som modular Home Theater com DAC interno — processa diretamente o SPDIF da TV Box, sem precisar de conversor externo.",
+    "resumo": "Mini system de alta potência com arquitetura modular e decodificação multi-channel, projetado para música e integração como Home Theater. DAC interno completo — processa diretamente o SPDIF da TV Box, sem precisar de conversor externo.",
     "specs": [
-      { "grupo": "Geral", "itens": [
-        ["Categoria", "Mini System (High Power) — Home Theater"],
-        ["Potência", "3200W PMPO / 380W RMS (sistema total) · ≈120W RMS por canal frontal"],
-        ["Mídia", "CD, CD-R/RW, CD-DA, MP3 — carrossel de até 5 CDs"],
-        ["Conectividade", "Entrada óptica e coaxial digital, entrada para fone"],
-        ["Construção", "Sistema 3 vias com câmaras separadas, dutos traseiros para subwoofer"]
+      { "grupo": "Geral e Conectividade", "itens": [
+        ["Categoria", "Mini System (High Power, decodificação Multi-Channel)"],
+        ["Mídia suportada", "Carrossel interno para até 5 CDs — CD-DA, CD-R/RW e arquivos MP3 estruturados em pastas"],
+        ["Entrada digital", "1× Óptica TOSLINK traseira — recebe PCM ou Dolby Digital de TVs/players"],
+        ["Entrada analógica", "Auxiliares estéreo (RCA)"],
+        ["Saídas discretas", "Canais Surround Esquerdo/Direito e Canal Central, para caixas satélite externas"],
+        ["Saída de fone", "Painel frontal"]
       ]},
       { "grupo": "DAC e DSP", "itens": [
-        ["DAC interno", "MASH 1-bit — alta linearidade, sem distorção de cruzamento"],
-        ["Processador (DSP)", "Toshiba TC9446F — 24-bit × 24-bit, 50 MIPS"],
-        ["Decodificação", "Dolby Digital (AC-3) e Dolby Pro Logic via hardware"],
-        ["Entradas processadas", "Leitor de CD interno, Óptica TOSLINK, Coaxial RCA"]
+        ["DAC interno", "Sistema MASH 1-bit avançado da Matsushita — converte direto o sinal óptico ou de CD, sem precisar de DAC externo"],
+        ["Processador (DSP)", "Toshiba TC9446F (ou equivalente) — decodificação por hardware nativo de Dolby Digital (AC-3) e Dolby Pro Logic, além de curvas de equalização complexas"]
       ]},
       { "grupo": "Amplificação", "itens": [
-        ["Classe", "H (módulos RSN — RSN311W64)"],
-        ["Vantagem da Classe H", "Voltagem variável: consome pouco em volume baixo, sobe instantaneamente nos picos de grave — mais eficiência térmica"],
-        ["Configuração", "Bi-amplificação passiva (woofers e tweeters com caminhos dedicados)"],
-        ["Subwoofer", "Saída RCA dedicada em nível de linha, abaixo de 80-100Hz"]
+        ["Classe", "H, de alta eficiência"],
+        ["Power IC", "Série RSN (ex: módulo RSN311W64)"],
+        ["Rail-switching", "Opera em baixa voltagem para sinais fracos e chaveia instantaneamente para alta voltagem nos picos de grave/transientes — eleva a eficiência térmica e evita desligamento por sobrecarga"],
+        ["Potência", "3200W PMPO / 380W RMS (sistema total)"],
+        ["Configuração", "Bi-amplificação física ativa — estágios e cabos independentes para Woofers e para Tweeters/Mids de cada torre"]
+      ]},
+      { "grupo": "DSP — Equalizações Pré-programadas (Preset EQ)", "itens": [
+        ["HEAVY", "Rock, eletrônica, pop, hip-hop — curva em V (graves e agudos reforçados)"],
+        ["SOFT", "Música ambiente, jazz suave — atenua extremos, som mais aveludado, menos fadiga"],
+        ["CLEAR", "Acústico, instrumental, clássica — realça médios-altos/agudos, mais separação e detalhe"],
+        ["VOCAL", "MPB, pop, podcasts — destaca 300Hz–3kHz, traz a voz para o primeiro plano"],
+        ["EQ-OFF", "Monitoramento puro/flat — desliga as curvas, entrega o áudio original"]
+      ]},
+      { "grupo": "DSP — Reforços Dinâmicos", "itens": [
+        ["SUPER SOUND EQ", "Ignora o Preset EQ e injeta ganho agressivo em graves e agudos simultaneamente — compensa perdas de arquivos comprimidos (MP3 de baixa taxa)"],
+        ["SUBWOOFER CONTROL · MID", "Ganho moderado, equilíbrio em ambientes menores"],
+        ["SUBWOOFER CONTROL · MAX", "Máxima excursão do woofer, aproveitando os dutos Bass Reflex traseiros"],
+        ["SUBWOOFER CONTROL · OFF", "Desliga o ganho extra de subgraves (inativo com fone de ouvido)"]
+      ]},
+      { "grupo": "DSP — Processamento Espacial e Multicanal", "itens": [
+        ["Dolby Digital (AC-3)", "Hardware nativo via entrada óptica — distribui áudio discreto para surrounds e central"],
+        ["Dolby Pro Logic · NORMAL", "Distribui frequências de forma equilibrada entre frontais e surrounds"],
+        ["Dolby Pro Logic · PHANTOM", "Cria canal central virtual usando as 2 caixas principais, se não houver caixa central física"]
+      ]},
+      { "grupo": "Construção Acústica (Caixas Principais)", "itens": [
+        ["Gabinete", "Bookshelf 3 vias, bi-amplificação real — câmaras internas isoladas contra ressonância entre vias"],
+        ["Alto-falantes", "Woofer de graves pesados + médios e tweeters dedicados, com dutos Bass Reflex traseiros"],
+        ["Resposta de frequência", "35Hz–22kHz (±6dB)"],
+        ["Bass Reflex", "Duto traseiro — caixas próximas a uma parede (20–50cm) usam a parede como extensão do duto, reforçando o grave"]
+      ]},
+      { "grupo": "Medição de campo (Quarto)", "itens": [
+        ["Fs da acústica do quarto", "50Hz — ambiente menor, com muitos harmônicos em 70Hz. A assinatura padrão deste Panasonic tem graves macios, mas dá para contornar com ajustes de DSP no player"]
       ]},
       { "grupo": "Por que não precisa de DAC externo", "itens": [
         ["Motivo", "O SC-AK600 já tem DAC e DSP internos completos — o DSP Toshiba identifica o tipo de sinal (estéreo ou Dolby 5.1) e o próprio aparelho converte e amplifica, sem precisar de conversor externo."]
@@ -147,7 +190,7 @@
     "id": "usb_audio_player_pro",
     "nome": "Celular (USB Audio Player Pro)",
     "ambiente": "Mobile",
-    "icon_img": "assets/icones/icon_usbaudioplayerpro.png",
+    "icon_img": "assets/icones/device_celular.png",
     "resumo": "Player de alta fidelidade para Android, usado no celular para tocar a coleção local com qualidade Hi-Res via USB DAC.",
     "specs": [
       { "grupo": "Sobre", "itens": [

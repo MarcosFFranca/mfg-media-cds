@@ -55,6 +55,8 @@ O `app.js` usa a API pública do Last.fm (`user.getrecenttracks`) para mostrar a
 
 ## Dados de origem
 
-Os 46 CDs e a contagem total de 29.403 faixas foram extraídos e validados a partir de `CONTAGEM_MUSICAS_CDS_COMPLETO.txt`. Os CDs #22 a #44 (Grupo B e C, fonte local/nuvem) tinham nomes de arquivo brutos (`01. Artista - Faixa.mp3`); foram normalizados para `Artista - Faixa` com a extensão preservada como badge visual.
+Os 46 CDs e a contagem total de 29.447 faixas foram extraídos e validados a partir de `CONTAGEM_MUSICAS_CDS_COMPLETO.txt`. Os CDs #22 a #44 (Grupo B e C, fonte local/nuvem) tinham nomes de arquivo brutos (`01. Artista - Faixa.mp3`); foram normalizados para `Artista - Faixa` com a extensão preservada como badge visual.
 
 > **Correção pós-lançamento:** o arquivo de origem registrava 74 faixas para "GTA San Andreas (Trilha Sonora)", mas a contagem real é 274. O CD foi atualizado com a listagem completa fornecida pelo usuário, e o total geral da coleção passou de 29.203 para 29.403 faixas.
+
+> **Atualização de catálogo:** A6 teve sua listagem completamente substituída (nomes de faixa corrigidos, 29 → 48 faixas); PRIME FORRÓ ESTILIZADO e SELEÇÃO FORRÓ DE PAREDÃO DAS ANTIGAS receberam novas faixas (842 e 912, respectivamente). O total geral da coleção passou de 29.403 para 29.447 faixas.

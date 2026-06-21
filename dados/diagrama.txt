@@ -8,9 +8,9 @@
 # ==========================================================================
 
 # --- BLOCO 1: FONTES DE DADOS ---
-NODE | fonte_hd       | BLOCO1 | HD                    | Disco Rígido Externo         | icon:💾 | icon_img:assets/icones/diagrama_hd.png
-NODE | fonte_pen1     | BLOCO1 | Pendrive 1            | Espelho do HD                | icon:🔌 | icon_img:assets/icones/diagrama_pendrive1.png
-NODE | fonte_pen2     | BLOCO1 | Pendrive 2            | Espelho do HD                | icon:🔌 | icon_img:assets/icones/diagrama_pendrive2.png
+NODE | fonte_hd       | BLOCO1 | HD                    | Disco Rígido Externo — Backup + exceções (Grupo D) | icon:💾 | icon_img:assets/icones/diagrama_hd.png
+NODE | fonte_pen1     | BLOCO1 | Pendrive 1            | Fonte local do TV Box X96    | icon:🔌 | icon_img:assets/icones/diagrama_pendrive1.png
+NODE | fonte_pen2     | BLOCO1 | Pendrive 2            | Fonte local do Mi Box        | icon:🔌 | icon_img:assets/icones/diagrama_pendrive2.png
 NODE | fonte_nuvem    | BLOCO1 | Nuvem (Backup)        | TeraBox — só backup/download | icon:☁️ | icon_img:assets/icones/diagrama_nuvem.png
 NODE | fonte_celular  | BLOCO1 | Dispositivo Móvel     | Memória Interna do Celular   | icon:📱 | icon_img:assets/icones/diagrama_celular_fonte.png
 NODE | fonte_stream   | BLOCO1 | Streaming             | Spotify / Deezer / YT Music  | icon:🌐 | icon_img:assets/icones/diagrama_streaming.png
@@ -40,6 +40,7 @@ EDGE_LABEL | player_celular | lastfm | USB Audio Player Pro: Scrobble OK · Spot
 EDGE_LABEL | grupo_c | grupo_d | NOTA: Grupo C está em TUDO — HD, Pendrive 1, Pendrive 2, celular E TeraBox (nuvem). Grupo D é a exceção: está apenas no HD e no TeraBox (nuvem) — NÃO está nos pendrives nem no celular.
 EDGE_LABEL | grupo_d | player_mibox | NOTA: Mi Box (Xiaomi) e TV Box (X96) só acessam o Grupo D quando o HD é conectado via porta USB diretamente neles — sem essa conexão física, esses dispositivos não têm acesso ao Grupo D.
 EDGE_LABEL | fonte_nuvem | lastfm | NOTA: O TeraBox guarda as playlists como backup para download, mas NÃO é uma fonte de reprodução — ele não se conecta a nenhum player (Bloco 3) nem gera scrobble no Last.fm.
+EDGE_LABEL | fonte_pen1 | fonte_pen2 | NOTA: Pendrive 1 e Pendrive 2 são espelhos um do outro (mesmo conteúdo), mas cada um alimenta fisicamente um player: o TV Box X96 Mate lê do Pendrive 1, e o Mi Box lê do Pendrive 2. O HD externo não é uma fonte do dia a dia — serve só como backup geral e para guardar as exceções do Grupo D, que não estão em nenhum dos dois pendrives.
 
 # --- METADADOS GERAIS ---
 META | total_cds | 46

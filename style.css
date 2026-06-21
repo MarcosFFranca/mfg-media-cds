@@ -520,6 +520,12 @@ body {
   font-family: var(--font-mono);
   contain-intrinsic-size: auto 400px;
 }
+
+#device-modal-body {
+  flex: 1; min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
 .track-line {
   display: flex; gap: 8px; align-items: baseline;
   padding: 5px 10px;
