@@ -58,7 +58,7 @@ function renderGrupoBreakdown() {
     { id: 'A', label: 'Grupo A · Streaming', color: 'var(--neon-green)' },
     { id: 'B', label: 'Grupo B · Híbridos', color: 'var(--aero-cyan)' },
     { id: 'C', label: 'Grupo C · Local/Nuvem', color: '#ffd54f' },
-    { id: 'MAG', label: 'Mag', color: 'var(--neon-red)' },
+    { id: 'D', label: 'Grupo D · Exceção (só HD)', color: 'var(--neon-red)' },
   ];
   const totalFaixas = MANIFEST.reduce((s, c) => s + c.actual, 0);
   const html = grupos.map(g => {
@@ -68,7 +68,7 @@ function renderGrupoBreakdown() {
     return `
       <div class="grupo-bar-row">
         <div class="grupo-bar-head">
-          <span>${g.label} <small style="opacity:.6">(${cds.length} CDs)</small></span>
+          <span><img src="assets/icones/grupo_${g.id.toLowerCase()}.png" class="grupo-bar-icon" alt="">${g.label} <small style="opacity:.6">(${cds.length} CDs)</small></span>
           <span>${fmtNum(faixas)} faixas · ${pct}%</span>
         </div>
         <div class="grupo-bar-track">
@@ -104,7 +104,7 @@ function renderCatalog() {
           <div class="cd-mini-case" data-slug="${cd.slug}" aria-hidden="true"></div>
           <h3>${escapeHTML(cd.name)}</h3>
           ${cd.aka ? `<span class="cd-aka">tb conhecido como "${escapeHTML(cd.aka)}"</span>` : ''}
-          <span class="cd-group-badge ${cd.grupo}">${cd.grupo === 'MAG' ? 'MAG' : 'Grupo ' + cd.grupo}</span>
+          <span class="cd-group-badge ${cd.grupo}"><img src="assets/icones/grupo_${cd.grupo.toLowerCase()}.png" class="badge-icon" alt="">Grupo ${cd.grupo}</span>
           <span class="cd-track-count">${fmtNum(cd.actual)} faixas</span>
         </div>
       </div>
@@ -299,15 +299,17 @@ async function initDiagrama() {
       const parts = line.split('|').map(p => p.trim());
 
       if (parts[0] === 'NODE') {
-        // NODE | id | BLOCO | titulo | subtitulo | icon:x | from:a,b,c
+        // NODE | id | BLOCO | titulo | subtitulo | icon:x | icon_img:caminho.png | from:a,b,c
         const [, id, bloco, titulo, sub, ...rest] = parts;
         let icon = '💿';
+        let iconImg = null;
         let from = [];
         rest.forEach(r => {
-          if (r.startsWith('icon:')) icon = r.replace('icon:', '').trim();
+          if (r.startsWith('icon_img:')) iconImg = r.replace('icon_img:', '').trim();
+          else if (r.startsWith('icon:')) icon = r.replace('icon:', '').trim();
           if (r.startsWith('from:')) from = r.replace('from:', '').split(',').map(s => s.trim()).filter(Boolean);
         });
-        nodes.push({ id, bloco, titulo, sub, icon, from });
+        nodes.push({ id, bloco, titulo, sub, icon, iconImg, from });
       } else if (parts[0] === 'EDGE_LABEL') {
         const [, from, to, desc] = parts;
         edgeLabels.push({ from, to, desc });
@@ -336,7 +338,7 @@ function renderDiagrama(nodes, edgeLabels) {
     if (!blocoNodes.length) return '';
     const nodesHtml = blocoNodes.map(n => `
       <div class="diagram-node" data-id="${n.id}" data-from="${n.from.join(',')}">
-        <span class="dn-icon">${n.icon}</span>
+        ${n.iconImg ? `<img class="dn-icon-img" src="${escapeHTML(n.iconImg)}" alt="">` : `<span class="dn-icon">${n.icon}</span>`}
         <span class="dn-title">${escapeHTML(n.titulo)}</span>
         <span class="dn-sub">${escapeHTML(n.sub)}</span>
       </div>`).join('');
@@ -347,15 +349,26 @@ function renderDiagrama(nodes, edgeLabels) {
       </div>`;
   }).join('<div class="diagram-arrow-row">⬇</div>');
 
-  const edgeHtml = edgeLabels.length ? `
-    <div class="diagram-block">
-      <p class="diagram-block-label">Status de Scrobble (Bloco 3 → Last.fm)</p>
+  const notas = edgeLabels.filter(e => e.desc.startsWith('NOTA:'));
+  const scrobbleLabels = edgeLabels.filter(e => !e.desc.startsWith('NOTA:'));
+
+  const notasHtml = notas.length ? `
+    <div class="diagram-block diagram-note-block">
+      <p class="diagram-block-label">💡 Como ler os Grupos C e D</p>
       <div class="edge-label-list">
-        ${edgeLabels.map(e => `<div><b>${escapeHTML(e.from)} → ${escapeHTML(e.to)}:</b> ${escapeHTML(e.desc)}</div>`).join('')}
+        ${notas.map(e => `<div>${escapeHTML(e.desc.replace('NOTA:', '').trim())}</div>`).join('')}
       </div>
     </div>` : '';
 
-  container.innerHTML = html + edgeHtml;
+  const edgeHtml = scrobbleLabels.length ? `
+    <div class="diagram-block">
+      <p class="diagram-block-label">Status de Scrobble (Bloco 3 → Last.fm)</p>
+      <div class="edge-label-list">
+        ${scrobbleLabels.map(e => `<div><b>${escapeHTML(e.from)} → ${escapeHTML(e.to)}:</b> ${escapeHTML(e.desc)}</div>`).join('')}
+      </div>
+    </div>` : '';
+
+  container.innerHTML = html + notasHtml + edgeHtml;
 
   // Interações de destaque (hover/focus) mostrando as conexões "from"
   const allNodeEls = container.querySelectorAll('.diagram-node');

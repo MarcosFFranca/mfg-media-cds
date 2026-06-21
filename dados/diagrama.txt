@@ -8,31 +8,38 @@
 # ==========================================================================
 
 # --- BLOCO 1: FONTES DE DADOS ---
-NODE | fonte_hd       | BLOCO1 | Armazenamento Físico | HD / Pendrive 1 / Pendrive 2 | icon:💾
-NODE | fonte_nuvem    | BLOCO1 | Nuvem                | TeraBox                      | icon:☁️
-NODE | fonte_celular  | BLOCO1 | Dispositivo Móvel     | Memória Interna do Celular   | icon:📱
-NODE | fonte_stream   | BLOCO1 | Streaming             | Spotify / Deezer / YT Music  | icon:🌐
+NODE | fonte_hd       | BLOCO1 | HD                    | Disco Rígido Externo         | icon:💾 | icon_img:assets/icones/diagrama_hd.png
+NODE | fonte_pen1     | BLOCO1 | Pendrive 1            | Espelho do HD                | icon:🔌
+NODE | fonte_pen2     | BLOCO1 | Pendrive 2            | Espelho do HD                | icon:🔌
+NODE | fonte_nuvem    | BLOCO1 | Nuvem (Backup)        | TeraBox — só backup/download | icon:☁️ | icon_img:assets/icones/diagrama_nuvem.png
+NODE | fonte_celular  | BLOCO1 | Dispositivo Móvel     | Memória Interna do Celular   | icon:📱 | icon_img:assets/icones/diagrama_celular_fonte.png
+NODE | fonte_stream   | BLOCO1 | Streaming             | Spotify / Deezer / YT Music  | icon:🌐 | icon_img:assets/icones/diagrama_streaming.png
 
 # --- BLOCO 2: CLUSTERS DE CONTEÚDO (46 CDs) ---
-NODE | grupo_a | BLOCO2 | Grupo A: Exclusivos Streaming     | 23 CDs | icon:🎧 | from:fonte_stream
-NODE | grupo_b | BLOCO2 | Grupo B: Híbridos Totais          | 13 CDs | icon:🔀 | from:fonte_hd,fonte_nuvem,fonte_celular,fonte_stream
-NODE | grupo_c | BLOCO2 | Grupo C: Exclusivos Locais & Nuvem | 8 CDs  | icon:💽 | from:fonte_hd,fonte_nuvem
-NODE | grupo_mag | BLOCO2 | Exceção: Mag                     | 2 CDs  | icon:⚠️ | from:fonte_hd
+NODE | grupo_a | BLOCO2 | Grupo A: Exclusivos Streaming     | 23 CDs | icon:🎧 | icon_img:assets/icones/grupo_a.png | from:fonte_stream
+NODE | grupo_b | BLOCO2 | Grupo B: Híbridos Totais          | 13 CDs | icon:🔀 | icon_img:assets/icones/grupo_b.png | from:fonte_hd,fonte_pen1,fonte_pen2,fonte_nuvem,fonte_celular,fonte_stream
+NODE | grupo_c | BLOCO2 | Grupo C: Local + Nuvem (completo) | 8 CDs  | icon:💽 | icon_img:assets/icones/grupo_c.png | from:fonte_hd,fonte_pen1,fonte_pen2,fonte_nuvem,fonte_celular
+NODE | grupo_d | BLOCO2 | Grupo D: Exceção — HD + Nuvem     | 2 CDs  | icon:⚠️ | icon_img:assets/icones/grupo_d.png | from:fonte_hd,fonte_nuvem
 
 # --- BLOCO 3: CAMADA DE REPRODUÇÃO ---
-NODE | player_mibox  | BLOCO3 | Xiaomi: Mi Box  | Kodi / Freezer / Foobar2000 | icon:📦 | from:grupo_a,grupo_b,grupo_c,grupo_mag
-NODE | player_tvbox  | BLOCO3 | TV Box: X96 Mate | Kodi / Freezer             | icon:📺 | from:grupo_a,grupo_b,grupo_c
-NODE | player_pc     | BLOCO3 | PC               | Navegadores / Apps Desktop  | icon:🖥️ | from:grupo_a,grupo_b,grupo_c
-NODE | player_celular | BLOCO3 | Celular - Players | USB Audio Player Pro / Apps Oficiais | icon:📲 | from:grupo_a,grupo_b,grupo_c
+NODE | player_mibox  | BLOCO3 | Xiaomi: Mi Box  | Kodi / Refreezer / Foobar2000 | icon:📦 | icon_img:assets/icones/diagrama_mibox.png | from:grupo_a,grupo_b,grupo_c,grupo_d
+NODE | player_tvbox  | BLOCO3 | TV Box: X96 Mate | Kodi / Refreezer             | icon:📺 | icon_img:assets/icones/diagrama_tvbox.png | from:grupo_a,grupo_b,grupo_c,grupo_d
+NODE | player_pc     | BLOCO3 | PC               | Navegadores / Apps Desktop  | icon:🖥️ | icon_img:assets/icones/diagrama_pc.png | from:grupo_a,grupo_b,grupo_c
+NODE | player_celular | BLOCO3 | Celular - Players | USB Audio Player Pro / Apps Oficiais | icon:📲 | icon_img:assets/icones/diagrama_celular_player.png | from:grupo_a,grupo_b,grupo_c
 
 # --- CAMADA DE RASTREAMENTO E ANALYTICS ---
-NODE | lastfm | BLOCO4 | Last.fm | Camada de Rastreamento & Analytics | icon:📊 | from:player_mibox,player_tvbox,player_pc,player_celular
+NODE | lastfm | BLOCO4 | Last.fm | Camada de Rastreamento & Analytics | icon:📊 | icon_img:assets/icones/diagrama_lastfm.png | from:player_mibox,player_tvbox,player_pc,player_celular
 
 # --- STATUS DAS LIGAÇÕES DE SCROBBLE (rotulam as linhas do Bloco 3 -> Last.fm) ---
 EDGE_LABEL | player_pc | lastfm | Scrobble Spotify: OK / Deezer (Web Desktop): SEM scrobble
-EDGE_LABEL | player_mibox | lastfm | Freezer + Kodi + Foobar2000: Scrobble OK
-EDGE_LABEL | player_tvbox | lastfm | Freezer + Kodi: Scrobble OK
+EDGE_LABEL | player_mibox | lastfm | Refreezer + Kodi + Foobar2000: Scrobble OK
+EDGE_LABEL | player_tvbox | lastfm | Refreezer + Kodi: Scrobble OK
 EDGE_LABEL | player_celular | lastfm | USB Audio Player Pro: Scrobble OK · Spotify: Scrobble OK · Deezer: SEM scrobble
+
+# --- NOTA EXPLICATIVA: diferença entre Grupo C e Grupo D ---
+EDGE_LABEL | grupo_c | grupo_d | NOTA: Grupo C está em TUDO — HD, Pendrive 1, Pendrive 2, celular E TeraBox (nuvem). Grupo D é a exceção: está apenas no HD e no TeraBox (nuvem) — NÃO está nos pendrives nem no celular.
+EDGE_LABEL | grupo_d | player_mibox | NOTA: Mi Box (Xiaomi) e TV Box (X96) só acessam o Grupo D quando o HD é conectado via porta USB diretamente neles — sem essa conexão física, esses dispositivos não têm acesso ao Grupo D.
+EDGE_LABEL | fonte_nuvem | lastfm | NOTA: O TeraBox guarda as playlists como backup para download, mas NÃO é uma fonte de reprodução — ele não se conecta a nenhum player (Bloco 3) nem gera scrobble no Last.fm.
 
 # --- METADADOS GERAIS ---
 META | total_cds | 46

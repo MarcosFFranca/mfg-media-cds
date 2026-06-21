@@ -140,7 +140,8 @@
     "grupo": "A",
     "icon": "🎮",
     "descricao": "Trilhas sonoras de jogos de esporte marcantes dos anos 2000 (playstation e xbox).",
-    "capa_ext_hint": "png"
+    "capa_ext_hint": "png",
+    "aka": "PLAY Y2K (Deezer)"
   },
   {
     "idx": 14,
@@ -206,7 +207,8 @@
     "grupo": "A",
     "icon": "📼",
     "descricao": "Uma das maiores e mais completas coleções de Synthpop, New Romantic, Post-Punk e hinos das pistas de dança da década de 80.",
-    "capa_ext_hint": "png"
+    "capa_ext_hint": "png",
+    "aka": "80 SONGS (Deezer)"
   },
   {
     "idx": 20,
@@ -357,7 +359,7 @@
     "slug": "mag_pra_quem_t_na_pista",
     "declared": 13,
     "actual": 13,
-    "grupo": "MAG",
+    "grupo": "D",
     "icon": "🕺",
     "descricao": "O Rap automotivo de Brasília que virou trilha do tuning, carros rebaixados, som no talo e crônicas da vida urbana nas pistas.",
     "capa_ext_hint": "png"
@@ -368,7 +370,7 @@
     "slug": "mag_superheris_urbanos",
     "declared": 33,
     "actual": 33,
-    "grupo": "MAG",
+    "grupo": "D",
     "icon": "🦸",
     "descricao": "Crônicas rimadas com graves marcantes sobre lendas do asfalto, o submundo do automobilismo urbano e os heróis da noite.",
     "capa_ext_hint": "png"
